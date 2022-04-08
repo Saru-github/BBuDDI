@@ -1,0 +1,29 @@
+3개의 테이블 : quiz, selection, result
+
+각 테이블의 컬럼
+-- quiz(quizid, questnum, question, ans_id)  -- ans_id는 selection테이블의 sel_id
+-- selection(quizid, questnum, sel_id, selection)  
+-- result(num, quizid, uid, questnum, usersel, edate)  num:자동증가필드, usersel은 selection테이블의 sel_id
+
+-- 문제와 보기 가져오기 예
+SELECT q.questnum, question, sel, sel_id FROM quiz q INNER JOIN selection s
+ON q.questnum=s.questnum
+ORDER BY q.questnum, s.sel_id;
+
+-- smith의 정답수 산출 예
+SELECT COUNT(*) "정답수" FROM mydb.result AS r INNER JOIN mydb.quiz AS q
+ON r.questnum=q.questnum AND r.usersel=q.ans_id
+WHERE uid='smith';
+
+-- 수험자의 결과(맞음/틀림 구분) 가져오기 예
+SELECT q.questnum, q.question, IF(q.ans_id=r.usersel, '맞음','틀림') "적중여부"
+FROM quiz q INNER JOIN result r
+ON q.questnum=r.questnum
+WHERE r.uid='smith';
+
+-- 시험결과 점수 산정 예
+SELECT SUM(sel) FROM quiz q INNER JOIN  result r
+ON q.questnum=r.questnum AND q.ans_id=r.usersel
+INNER JOIN selection s
+ON q.ans_id=s.sel_id
+WHERE uid='smith';

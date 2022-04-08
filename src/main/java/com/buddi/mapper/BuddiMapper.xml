@@ -1,1 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.buddi.mapper.BuddiMapper">
+
+    <select id="login" 
+    	resultType="String" 
+    	parameterType="com.buddi.vo.BuddiUserVO">
+        SELECT uid
+        FROM user
+        WHERE uid=#{uid} AND pwd=#{pwd}
+    </select>
+
+     <select id="getUserById" 
+    	resultType="com.buddi.vo.BuddiUserVO"
+    	parameterType="String">
+        SELECT *
+        FROM user
+        WHERE uid=#{uid}
+    </select>
+    
+    <select id="getMonByNum" 
+    	resultType="com.buddi.vo.BuddiMonVO"
+    	parameterType="Integer">
+        SELECT *
+        FROM poketmon
+        WHERE dNum=#{dNum}
+    </select>
+   <!-- 
+    <select id="getUserList" 
+    	resultType="com.buddi.vo.BuddiUserVO">
+        SELECT uid,pwd,name,phone
+        FROM users
+    </select>
+    
+    <select id="getUserMap" 
+    	resultType="map">
+        SELECT uid,pwd,name,phone
+        FROM users
+    </select>
+    
+    <insert id="insertUser" 
+    	parameterType="com.buddi.vo.BuddiUserVO">
+    	INSERT INTO users VALUES(#{uid},#{pwd},#{name},#{phone})
+    </insert>
+    
+	한 행을 추가하고 자동증가필드의 값을 파라미터 객체의 num변수에 할당
+	<insert id="addAndGetKey" useGeneratedKeys="true" keyProperty="num"
+        parameterType="com.buddi.vo.BuddiUserVO">
+		INSERT INTO users VALUES(NULL,#{name},#{phone},#{email})
+	</insert>
+
+    update 요소는 resultType 속성이 없어도 변경된 행의 수(정수)가 리턴됨
+    <update id="updateUser" 
+    	parameterType="com.buddi.vo.BuddiUserVO">
+    	UPDATE users 
+    	SET phone=#{phone}
+    	WHERE uid=#{uid}
+    </update>
+    
+    <update id="updateByMap" 
+    	parameterType="map">
+    	UPDATE users 
+    	SET phone=#{phone}
+    	WHERE uid=#{uid}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+    	DELETE FROM users WHERE uid=#{uid}
+    </delete> -->
+    
+</mapper>
