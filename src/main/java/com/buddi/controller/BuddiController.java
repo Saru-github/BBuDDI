@@ -43,7 +43,7 @@ public class BuddiController {
 		} else {
 			BuddiUserVO user = svc.detailUser(uid);
 			Random rd = new Random();
-			int dNum = rd.nextInt(4)+1;
+			int dNum = rd.nextInt(12)+1;
 			
 			BuddiMonVO mon = svc.detailMon(dNum);
 			

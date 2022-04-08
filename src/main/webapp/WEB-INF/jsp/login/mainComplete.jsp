@@ -11,7 +11,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .container {
 	whidth: 96%;
 	margin: 0 auto;
@@ -233,7 +232,9 @@
 		<Br>
 		<h2> ${mon.pName}</h2>
 		<Br>
-		<img src="../upload/${today}.png">
+		<div id = "mon">
+		<img src="../upload/${today}.png" width="250" height="250">
+		</div>
 		<br>
 		<label>포켓몬 이름: </label> ${mon.pName}
 		<br>
