@@ -56,7 +56,13 @@
 	border: 3px solid black;
 	font-size: xx-large;
 	text-align: center;
+	}
+.gacha{
+	border: 1px solid black;
+	font-size: large;
+	text-align: right;
 }
+
 
 .b {
 	right: auto;
@@ -232,8 +238,9 @@
 		<Br>
 		<h2> ${mon.pName}</h2>
 		<Br>
+		[<a id="gacha" href="/buddi/gacha">자세히보기</a>]
 		<div id = "mon">
-		<img src="../upload/${today}.png" width="250" height="250">
+		<img src="../upload/poketmon/${today}.png" width="250" height="250">
 		</div>
 		<br>
 		<label>포켓몬 이름: </label> ${mon.pName}
@@ -263,7 +270,8 @@
 			</div>
 
 			<div class="logout">
-				[<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]
+				[<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]<Br>
+				[<a href="/buddi/detail">상세회원정보</a>]
 			</div>
 
 		</div>

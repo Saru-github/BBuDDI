@@ -29,5 +29,6 @@ public interface BuddiMapper {
 
 /* 위에 선언된 Dynamic SQL을 사용하는 메소드  선언 */
 	BuddiUserVO findWithoutId(BuddiUserVO vo);
+
 	
 }

@@ -1,12 +1,12 @@
 package com.buddi.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +25,8 @@ import com.buddi.vo.BuddiUserVO;
 @Controller
 @SessionAttributes("uid") /* uid 라는 파라미터변수나 ModelAttribute 속성은 세션에 저장 */
 @RequestMapping("/buddi")
+
+
 public class BuddiController {
 
 	@Autowired
@@ -34,17 +36,15 @@ public class BuddiController {
 	public String form() {
 		return "login/main";
 	}
-
+   
 	@GetMapping("/mainc")
 	public String mainc(@SessionAttribute(name = "uid", required = false) String uid, Model model) {
 
 		if (uid == null) {
-			return "redirect:/user/login"; // 로그인 폼으로 ...
+			return "redirect:/buddi/main"; // 로그인 폼으로 ...
 		} else {
 			BuddiUserVO user = svc.detailUser(uid);
-			Random rd = new Random();
-			int dNum = rd.nextInt(12)+1;
-			
+			int dNum = svc.getTodayMon();
 			BuddiMonVO mon = svc.detailMon(dNum);
 			
 			model.addAttribute("user", user);
@@ -96,26 +96,46 @@ public class BuddiController {
 	}
 
 	@GetMapping("/detail")
-	public String detail(@RequestParam String userid, Model model) {
-		BuddiUserVO user = svc.detailUser(userid);
+	public String detail(@SessionAttribute(name="uid")String uid, Model model) {
 		
+		BuddiUserVO user = svc.detailUser(uid);
+		
+		model.addAttribute("user", user);
+		
+		return "/detail/detail_user";
+	}
+	
+	@GetMapping("/join")
+	public String join() {
+		return "/login/join_form";
+	}
+	
+	@GetMapping("/gacha")
+	public String gacha(Model model) {
 		
 		Random rd = new Random();
-		int dNum = rd.nextInt(4)+1;
-		int pNum = 0;
-		if(dNum==1) {	
-			pNum = 1;
-		}
-		else {
-		pNum = dNum-1;
-		}
-		Map<String, Object> map = new HashMap<>();
-		map.put("user", user);
-		map.put("today", pNum);
-		model.addAttribute("map", map);
+		int dNum = rd.nextInt(159)+1;
 		
-		return "user/detail";
+		BuddiMonVO mon = svc.detailMon(dNum);
+		
+		model.addAttribute("today", mon.getpNum());
+		model.addAttribute("mon", mon);
+		return "/gacha/gacha_main";
 	}
+	
+	@GetMapping("/gogacha")
+	public String gogacha(@RequestParam String strCount,@SessionAttribute(name="uid")String uid, Model model) {
+		List<BuddiMonVO> result = new ArrayList<>();
+		int count = Integer.parseInt(strCount);
+		result = svc.getGachaResult(count);
+		BuddiUserVO user = svc.detailUser(uid);
+		
+		model.addAttribute("result", result);
+		model.addAttribute("user", user);
+		
+		return "/gacha/gacha_result";
+	}
+	
 
 	/*
 	 * @GetMapping("/edit") public String edit(@RequestParam String userid, Model

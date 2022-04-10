@@ -70,4 +70,5 @@ public class BuddiDAO
 	public BuddiMonVO getMonByNum(int dNum) {
 		return buddiMapper.getMonByNum(dNum);
 	}
+
 }
