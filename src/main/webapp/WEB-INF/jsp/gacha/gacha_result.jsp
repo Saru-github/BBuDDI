@@ -8,6 +8,11 @@
 <title>뽑기결과</title>
 <style>
 
+.container{
+	border: 1px solid black;
+
+}
+
 #num{
 	border-radius:20px;
 	width:50px;
@@ -38,24 +43,6 @@ html, body {
 * {
   font-family: 'Rajdhani', sans-serif;
 }
-.itsMe {
-  position:absolute;
-  bottom:10px;
-  right:14px;
-  display:block;
-	background-color:rgba(255, 255, 255, 0.5);
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1);
-  padding: 4px 12px;
-	color: rgba(0, 0, 0, 0.9);
-  text-decoration:none;
-}
-.itsMe:hover {
-  color: rgba(0, 0, 0, 1);
-  background-color:rgba(255, 255, 255, 1);
-}
-
 
 h1 {
   margin-top:0;
@@ -101,7 +88,7 @@ h2 {
 	bottom: 0px;
 	cursor: pointer;
 	width: 100%;
-	line-height: 40px;
+	line-height: 300px;
 	display: block;
 	text-align: center;
     color:#fff;
@@ -153,11 +140,13 @@ jQuery(document).ready(function($){
 	    $( this ).closest(".card").toggleClass( "flip" );
 	  });
 	});
+	
 </script>
 </head>
 <body>
 <section class="wrapper">
   <h1>뽑기결과</h1> <h1 id="regacha"></h1>
+  <div class ="container">
 <!-- Card Html -->
 <c:forEach var="b" items="${result}">
     <div class="card">
@@ -190,8 +179,8 @@ jQuery(document).ready(function($){
   <a href = "/buddi/gogacha?strCount=1" >1회뽑기</a><br>
   <a href = "/buddi/mainc" >메인으로</a>
   </nav>
+  </div>
 </section>
 
-<a class="itsMe" href="http://www.designtrick.com/">@ Kibria</a>
 </body>
 </html>

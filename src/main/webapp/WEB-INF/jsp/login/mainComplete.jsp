@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,12 @@
 	grid
 }
 
+.allbbs{
+	text-align: right;
+	margin-right: 30px;
+	font-size:large;
+}
+
 .header {
 	grid-area: header;
 	width: 100%;
@@ -36,6 +43,14 @@
 	text-align: center;
 	height: 100px;
 	border: 3px solid black;
+}
+
+.din {
+	margin-top : 20px;
+}
+
+div > h2{
+	margin-bottom: 20px;
 }
 
 #ball {
@@ -56,6 +71,7 @@
 	border: 3px solid black;
 	font-size: xx-large;
 	text-align: center;
+	height : 500px;
 	}
 .gacha{
 	border: 1px solid black;
@@ -72,7 +88,8 @@
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	border: 3px solid black;
-	width: 340px;
+	width: 400px;
+	height : 500px;
 }
 
 #detail {
@@ -94,25 +111,27 @@
 }
 
 .main {
-	height: 800px;
+	height: 900px;
 	grid-area: main;
 	border: 3px solid black;
 	font-size: xx-large;
-	text-align: center;
 	background-image: url(../upload/main.png);
 	background-size: cover;
 }
 
+
 .c {
 	grid-area: c;
+	height: 400px;
 	border: 3px solid black;
-	font-size: xx-large;
-	text-align: center;
+	
 }
-
 .d {
 	grid-area: d;
 	border: 3px solid black;
+	text-align: center;
+	height: 400px;
+	width: 400px;
 }
 
 .button {
@@ -236,20 +255,15 @@
 		<div class="header">Header</div>
 		<div class="a">오늘의 포켓몬은 뭘까용?
 		<Br>
-		<h2> ${mon.pName}</h2>
-		<Br>
-		[<a id="gacha" href="/buddi/gacha">자세히보기</a>]
+		<h2>No. ${mon.pNum}</h2>
 		<div id = "mon">
-		<img src="../upload/poketmon/${today}.png" width="250" height="250">
+		<img src="../upload/poketmon/${mon.pNum}.png" width="200px" height="200px">
 		</div>
-		<br>
 		<label>포켓몬 이름: </label> ${mon.pName}
 		<br>
 		<label>포켓몬 등급: </label> ${mon.pGrade}
 		<br>
-		<label>포켓몬 타입: </label> ${mon.pType}
-		<br>
-		<label>포켓몬 시세: </label> 천만원
+		[<a id="gacha" href="/buddi/gacha">자세히보기</a>]
 		</div>
 		<div class="b">
 			<h1 id="logo">로그인된 후 회원정보</h1>
@@ -277,14 +291,29 @@
 		</div>
 
 		<div class="main"></div>
-		<div class="c">c</div>
-		<div class="d">
+		<div class="c">
 			<h1 class="logo">채팅프로그램</h1>
-			<input id="inputMsgBox" style="width: 300px;" type="text" onkeypress="inputMsgBox_onkeypress()">
+			<input id="inputMsgBox" style="width: 200px;" type="text" onkeypress="inputMsgBox_onkeypress()">
 			<div class="button">
 				<input id="sendButton" value="Send" type="button" onclick="sendButton_onclick()"> <input id="disconnectButton" value="Disconnect" type="button" onclick="disconnectButton_onclick()"> <br />
 			</div>
-			<textarea id="chatBoxArea" rows="10" cols="100" readonly="readonly"></textarea>
+			<textarea id="chatBoxArea" rows="10" cols="55" readonly="readonly"></textarea>
+		</div>
+		<div class="d">
+			<div class ="din">
+			<h2>게시판</h2>
+			<div class = "allbbs">[<a href="/buddi/bbs/list">전체보기</a>]</div>
+			<c:forEach var="b"  items="${list}">
+   		<div>${b.num}
+      <a href="/buddi/bbs/detail?num=${b.num}" >${b.title}</a>
+       
+      <c:forEach var="a" items="${b.attach}">
+        ${a.num} ${a.filename} ${a.filesize}
+      </c:forEach>
+   </div>
+</c:forEach>
+		
+			</div>
 		</div>
 		<div class="footer">footer</div>
 	</div>

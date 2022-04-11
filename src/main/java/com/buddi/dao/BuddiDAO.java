@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.buddi.mapper.BuddiMapper;
+import com.buddi.vo.BuddiBoardVO;
 import com.buddi.vo.BuddiMonVO;
 import com.buddi.vo.BuddiUserVO;
 import com.github.pagehelper.PageHelper;
@@ -69,6 +70,33 @@ public class BuddiDAO
 	
 	public BuddiMonVO getMonByNum(int dNum) {
 		return buddiMapper.getMonByNum(dNum);
+	}
+	
+	public boolean addBoard(BuddiBoardVO board) {
+		return buddiMapper.addBoard(board) > 0;
+
+	}
+
+	public boolean addFileInfo(Map<String, Object> map) {
+		return buddiMapper.addFileInfo(map) > 0;
+
+	}
+
+	public List<Map<String, Object>> boardList() {
+		return buddiMapper.boardList();
+	}
+
+	public List<Map<String, Object>> detail(int num) {
+		return buddiMapper.getDetail(num);
+
+	}
+
+	public String getFilename(int num) {
+		return buddiMapper.getFilename(num);
+	}
+
+	public boolean deleteFileInfo(int num) {
+		return buddiMapper.deleteFileInfo(num) > 0;
 	}
 
 }

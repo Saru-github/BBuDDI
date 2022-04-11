@@ -70,4 +70,34 @@
     	DELETE FROM users WHERE uid=#{uid}
     </delete> -->
     
+    <insert id="addBoard" 
+       parameterType="com.buddi.vo.BuddiBoardVO"
+       useGeneratedKeys="true" keyProperty="num">
+       INSERT INTO board VALUES(null, #{title}, #{author}, #{contents}, NOW())
+    </insert>
+    
+    <insert id="addFileInfo"
+       parameterType="map">
+       INSERT INTO attach VALUES(null, #{board_num}, #{filename}, #{filesize})
+    </insert>
+    
+    <select id="boardList"
+       resultType="map">
+       SELECT * FROM board b LEFT OUTER JOIN attach a
+       ON b.num=a.board_num
+    </select>
+    <select id="getDetail"
+    resultType="map"
+    parameterType="Integer">
+    SELECT * FROM board b LEFT OUTER JOIN attach a ON b.num=a.board_num WHERE b.num=#{num}
+    </select>
+    
+    <select id="getFilename" parameterType="Integer" resultType="String">
+    SELECT filename FROM attach WHERE att_num=#{num}
+    </select>
+    
+    <delete id="deleteFileInfo" parameterType="Integer">
+    DELETE FROM attach WHERE att_num=#{num};
+    </delete>
+    
 </mapper>

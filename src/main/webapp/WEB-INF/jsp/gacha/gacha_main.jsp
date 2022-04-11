@@ -30,7 +30,7 @@
 		<h2>${mon.pName}</h2>
 		<Br>
 		<div id="mon">
-			<img src="../upload/poketmon/${today}.png" width="250" height="250">
+			<img src="../upload/poketmon/${mon.pNum}.png" width="250" height="250">
 		</div>
 		<br> <label>포켓몬 이름: </label> ${mon.pName} <br> <label>포켓몬
 			등급: </label> ${mon.pGrade} <br> <label>포켓몬 타입: </label> ${mon.pType} <br>
