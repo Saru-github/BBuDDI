@@ -9,15 +9,52 @@
 
 <style>
 
-
-
-
-
-
 * {
 	margin: 0;
 	padding: 0;
 }
+
+
+#type {
+	background-color: red;
+	margin: 1px;
+	border-radius: 5px;
+	display: inline-block;
+	width: 45px;
+	text-align: center;
+	color: window;
+}
+
+
+wrap {
+    width: 1000px;
+	margin:auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 24px;
+}
+#bbs {
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
+th {
+	background: rgb(221, 221, 221);
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+
+
 .container {
 	whidth: 96%;
 	margin: 0 auto;
@@ -43,6 +80,16 @@
 
 .header {
 	grid-area: header;
+	width: 99%;
+	border: 3px solid black;
+	font-size: xx-large;
+	text-align: center;
+	height: 100px;
+	border: 3px solid black;
+}
+
+#topMenu {
+	grid-area: header;
 	width: 100%;
 	border: 3px solid black;
 	font-size: xx-large;
@@ -51,6 +98,22 @@
 	border: 3px solid black;
 }
 
+#topMenu ul{
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#topMenu ul li { 
+	list-style:none;  color:white; 
+	background-color:#2d2d2d; 
+	float:left; 
+	margin-top: 50px;
+	line-height:50px; 
+	vertical-align:middle; 
+	text-align:center; 
+	}
+	
 .din {
 	margin-top : 20px;
 }
@@ -72,13 +135,26 @@ div > h2{
 	width: 100%;
 }
 
+#topMenu .menuLink { 
+	text-decoration:none; color:white;
+	display:block;
+	width:320px; font-size:12px; 
+	font-weight:bold; font-family:"Trebuchet MS", Dotum, Arial;
+	
+}
+
+#topMenu .menuLink:hover { 
+	color:red; background-color:#4d4d4d;
+}
+
+
 .a {
 	grid-area: a;
 	border: 3px solid black;
-	font-size: xx-large;
+	font-size: x-large;
 	text-align: center;
-	height : 500px;
-	}
+	height: 500px;
+}
 .gacha{
 	border: 1px solid black;
 	font-size: large;
@@ -286,18 +362,83 @@ a:hover{
 </head>
 <body>
 	<div class="container">
-		<div class="header">Header</div>
-		<div class="a">오늘의 포켓몬은 뭘까용?
-		<Br>
-		<h2>No. ${mon.pNum}</h2>
-		<div id = "mon">
-		<img src="../upload/poketmon/${mon.pNum}.png" width="200px" height="200px">
+		<div class = "header">
+		<nav id="topMenu">
+			<ul>
+				<li><a class="menuLink" href="#">About us</a></li>
+				<li><a class="menuLink" href="#">Ministries</a></li>
+				<li><a class="menuLink" href="#">Community</a></li>
+				<li><a class="menuLink" href="#">Locations</a></li>
+				<li><a class="menuLink" href="#">Blog</a></li>
+				<li><a class="menuLink" href="#">Blog</a></li>
+			</ul>
+
+		</nav>
 		</div>
-		<label>포켓몬 이름: </label> ${mon.pName}
-		<br>
-		<label>포켓몬 등급: </label> ${mon.pGrade}
-		<br>
-		[<a id="gacha" href="/buddi/gacha">자세히보기</a>]
+		<div class="a">
+			<h3>오늘의 포켓몬은 뭘까용?</h3>
+			<h2>No. ${mon.pNum}</h2>
+			<div id="mon">
+				<img src="../upload/poketmon/${mon.pNum}.gif" width="150px" height="200px">
+			</div>
+
+	<div class="7" style="width: 100%;">
+		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid #dc3165;">
+			<tr>
+			</tr>
+			<tr style="background-color: #dc3165; color: white; ">
+				<td class="1" colspan="1" style="text-align: center; width:10%; ">
+					<div>번호</div>
+				</td>
+				<td rowspan="1" style="text-align: center; width:45%;">
+					<div>이름</div>
+				</td>
+				<td rowspan="1" style="text-align: center; width:20%;">
+					<div>등급</div>
+				</td>
+				<td rowspan="1" style="text-align: center; width:20%; ">
+					<div>
+						<span style="color: white">타입</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pNum}</td>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pName}</td>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pGrade}</td>
+				<td style="text-align: center;">
+					<div id="type"
+						style=" font-size:large"; background-color: 
+			<c:if test="${b.pType eq '불꽃'}">rgb(240, 128, 48);</c:if>
+			<c:if test="${b.pType eq '격투'}">rgb(192, 48, 40);</c:if>
+			<c:if test="${b.pType eq '에스퍼'}">rgb(220, 49, 101</c:if>
+			<c:if test="${b.pType eq '바위'}">rgb(158, 134, 61);</c:if>
+			<c:if test="${b.pType eq '물'}">rgb(2, 103, 194);</c:if>
+			<c:if test="${b.pType eq '땅'}">rgb(224, 192, 104);</c:if>
+			<c:if test="${b.pType eq '드래곤'}">rgb(78, 59, 164);</c:if>
+			<c:if test="${b.pType eq '독'}">rgb(107, 36, 110);</c:if>
+			<c:if test="${b.pType eq '노말'}">rgb(173, 165, 148);</c:if>
+			<c:if test="${b.pType eq '강철'}">rgb(142, 142, 159);</c:if>
+			<c:if test="${b.pType eq '벌레'}">rgb(136, 140, 14);</c:if>
+			<c:if test="${b.pType eq '고스트'}">rgb(105, 85, 130);</c:if>
+			<c:if test="${b.pType eq '악'}">rgb(60, 45, 35);</c:if>
+			<c:if test="${b.pType eq '비행'}">rgb(93, 115, 212);</c:if>
+			<c:if test="${b.pType eq '얼음'}">6dd3f5;</c:if>
+			<c:if test="${b.pType eq '전기'}">rgb(237, 169, 0);</c:if>
+			<c:if test="${b.pType eq '페어리'}">rgb(224, 142, 224);</c:if>
+			<c:if test="${b.pType eq '풀'}">rgb(56, 154, 2);</c:if>
+			"
+					>${mon.pType}
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+			
+			
+			
+			<br> [<a id="gacha" href="/buddi/gacha">자세히보기</a>]
 		</div>
 		<div class="b">
 			<h1 id="logo">로그인된 후 회원정보</h1>

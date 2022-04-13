@@ -8,6 +8,9 @@
 <title>뽑기결과</title>
 <style>
 
+
+
+
 .container{
 	border: 1px solid black;
 
@@ -21,6 +24,17 @@
 	background-color:white;
 	
 }
+
+#type{
+	margin:1px;
+	border-radius:5px;
+	display:inline-block;
+	width:55px;
+	text-align:center;
+	color:window;
+	
+}
+
 
 nav{
 	text-align: right;
@@ -58,8 +72,8 @@ h2 {
 	text-align: center;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	width: 200px;
-	height: 250px;
+	width: 270px;
+	height: 300px;
 	padding: 0;
 	margin: 0.8%;
 	margin-bottom: 18px;
@@ -138,16 +152,16 @@ color: black;
 
 jQuery(document).ready(function($){
 	
-	
-	
-	
-	
-	
-	
 	  $( ".card .flipButton" ).click(function() {
 	    $( this ).closest(".card").toggleClass( "flip" );
 	  });
+	  
+	  $("#allButton").click(function(){
+		  $(".card").addClass("flip")
+		});
+	  
 	});
+	
 	
 </script>
 </head>
@@ -171,16 +185,78 @@ jQuery(document).ready(function($){
 							
 								<div id="numcon">${b.pNum}</div>
 							</div>
-							<img src="../upload/poketmon/${b.pNum}.png" width="100" height="100">
+							<img src="../upload/poketmon/${b.pNum}.gif" width="100" height="100">
 			</div>
 			<br> 
-			<label>포켓몬 이름: </label> ${b.pName} <br> 
-			<label>포켓몬 등급: </label> ${b.pGrade}<br>
-			<label>포켓몬 타입: </label> ${b.pType} <br>
+			<br> 
+			
+			
+			
+			<div class="a" style="width: 100%;">
+		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid #dc3165;">
+			<tr>
+			</tr>
+			<tr style="background-color: #dc3165; color: white; ">
+				<td class="1" colspan="1" style="text-align: center; width:10%; ">
+					<div>번호</div>
+				</td>
+				<td rowspan="1" style="text-align: center; width:45%;">
+					<div>이름</div>
+				</td>
+				<td rowspan="1" style="text-align: center; width:20%;">
+					<div>등급</div>
+				</td>
+				<td rowspan="1" style="text-align: center; width:20%; ">
+					<div>
+						<span style="color: white">타입</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${b.pNum}</td>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${b.pName}</td>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${b.pGrade}</td>
+				<td style="text-align: center;">
+					<div id="type"
+						style="background-color: 
+			<c:if test="${b.pType eq '불꽃'}">rgb(240, 128, 48);</c:if>
+			<c:if test="${b.pType eq '격투'}">rgb(192, 48, 40);</c:if>
+			<c:if test="${b.pType eq '에스퍼'}">rgb(220, 49, 101</c:if>
+			<c:if test="${b.pType eq '바위'}">rgb(158, 134, 61);</c:if>
+			<c:if test="${b.pType eq '물'}">rgb(2, 103, 194);</c:if>
+			<c:if test="${b.pType eq '땅'}">rgb(224, 192, 104);</c:if>
+			<c:if test="${b.pType eq '드래곤'}">rgb(78, 59, 164);</c:if>
+			<c:if test="${b.pType eq '독'}">rgb(107, 36, 110);</c:if>
+			<c:if test="${b.pType eq '노말'}">rgb(173, 165, 148);</c:if>
+			<c:if test="${b.pType eq '강철'}">rgb(142, 142, 159);</c:if>
+			<c:if test="${b.pType eq '벌레'}">rgb(136, 140, 14);</c:if>
+			<c:if test="${b.pType eq '고스트'}">rgb(105, 85, 130);</c:if>
+			<c:if test="${b.pType eq '악'}">rgb(60, 45, 35);</c:if>
+			<c:if test="${b.pType eq '비행'}">rgb(93, 115, 212);</c:if>
+			<c:if test="${b.pType eq '얼음'}">6dd3f5;</c:if>
+			<c:if test="${b.pType eq '전기'}">rgb(237, 169, 0);</c:if>
+			<c:if test="${b.pType eq '페어리'}">rgb(224, 142, 224);</c:if>
+			<c:if test="${b.pType eq '풀'}">rgb(56, 154, 2);</c:if>
+			"
+					>${b.pType}
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+			
+			
+			
+			
         </section> 
       </div>
     </div> 
+    
+    
   </c:forEach>
+  
+  <button type="button" id="allButton">돌려돌려</button>
   <nav>
   <img src="../upload/ball.jpg" width="50" height="50">&nbsp;&nbsp;&nbsp;X${user.mBall}
   <a href = "/buddi/gogacha?strCount=11" >10+1회뽑기</a><br>
