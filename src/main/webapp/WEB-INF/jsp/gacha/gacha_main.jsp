@@ -8,12 +8,27 @@
 
 
 <style>
-.a {
-	border: 3px solid black;
-	font-size: xx-large;
-	text-align: center;
+*{
+text-align: center;
 }
 
+.a {
+	font-size: xx-large;
+	display: inline-block;
+	float: left;
+	margin-left: 200px;
+}
+
+.gacha {
+	margin-top: 100px;
+	display: inline-block;
+	font-size: xx-large;
+}
+
+nav {
+	display: inline-block;
+	margin-left: 50px;
+}
 
 
 </style>
@@ -30,16 +45,25 @@
 		<h2>${mon.pName}</h2>
 		<Br>
 		<div id="mon">
-			<img src="../upload/poketmon/${mon.pNum}.png" width="250" height="250">
+			<img src="../upload/poketmon/${mon.pNum}.png" width="400" height="500">
 		</div>
-		<br> <label>포켓몬 이름: </label> ${mon.pName} <br> <label>포켓몬
-			등급: </label> ${mon.pGrade} <br> <label>포켓몬 타입: </label> ${mon.pType} <br>
-		<label>포켓몬 시세: </label> 천만원
-
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<div class = "gacha">
+		<label>포켓몬 이름: </label> ${mon.pName} 
+		<br><br> <label>포켓몬등급: </label> ${mon.pGrade} 
+		<br><br> <label>포켓몬 타입: </label> ${mon.pType}
+		<br><br> <label>포켓몬 시세: </label> 천만원
+		<br><br>
+			<nav>
 			<a href = "/buddi/gogacha?strCount=11" >11회뽑기</a>
 			<a href = "/buddi/gogacha?strCount=1" >1회뽑기</a>
-	</div>
+			</nav>
 	</div>
 
 

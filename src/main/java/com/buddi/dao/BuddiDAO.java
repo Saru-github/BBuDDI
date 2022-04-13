@@ -2,8 +2,10 @@ package com.buddi.dao;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 
 import com.buddi.mapper.BuddiMapper;
@@ -99,4 +101,24 @@ public class BuddiDAO
 		return buddiMapper.deleteFileInfo(num) > 0;
 	}
 
+	public void minusBall(Map<String, Object> map) {
+		buddiMapper.minusBall(map);
+	}
+	
+	@Scheduled(cron = "0 0 0/1 * * * ") 
+	public void plusBall() {
+		buddiMapper.plusBall();
+	}
+	
+	@Scheduled(cron = "0 0 5 * * * ")
+	public void TodayMon() {
+		Random rd = new Random();
+		int dNum = rd.nextInt(159);
+		buddiMapper.reTodayMon();
+		buddiMapper.todayMon(dNum);
+	}
+	
+	public BuddiMonVO getTodayMon() {
+		return buddiMapper.getTodayMon();
+	}
 }

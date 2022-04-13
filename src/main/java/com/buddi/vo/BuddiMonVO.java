@@ -9,6 +9,8 @@ public class BuddiMonVO {
 	private String pName;
 	private String pGrade;
 	private String pType;
+	public static int toMon;
+
 
 	@Override
 	public int hashCode() {
@@ -66,4 +68,6 @@ public class BuddiMonVO {
 		this.pType = pType;
 	}
 
+	
+	
 }

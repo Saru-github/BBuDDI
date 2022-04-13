@@ -8,6 +8,12 @@
 <title>로그인</title>
 
 <style>
+
+
+
+
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -78,6 +84,34 @@ div > h2{
 	font-size: large;
 	text-align: right;
 }
+
+#wrap {
+    width: 1000px;
+	margin:auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 24px;
+}
+#bbs {
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
+th {
+	background: rgb(221, 221, 221);
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+}
+
 
 
 .b {
@@ -300,21 +334,37 @@ div > h2{
 			<textarea id="chatBoxArea" rows="10" cols="55" readonly="readonly"></textarea>
 		</div>
 		<div class="d">
-			<div class ="din">
-			<h2>게시판</h2>
-			<div class = "allbbs">[<a href="/buddi/bbs/list">전체보기</a>]</div>
-			<c:forEach var="b"  items="${list}">
-   		<div>${b.num}
-      <a href="/buddi/bbs/detail?num=${b.num}" >${b.title}</a>
-       
-      <c:forEach var="a" items="${b.attach}">
-        ${a.num} ${a.filename} ${a.filesize}
-      </c:forEach>
-   </div>
-</c:forEach>
-		
-			</div>
-		</div>
+			<div class="din">
+				<h2>게시판</h2>
+				<div class="allbbs">
+				<div id="bbswrap">
+		<table>
+			<tr>
+				<td colspan="5" style="border: white; text-align: right;">
+					<div id= "all">
+					<a href="/buddi/bbs/add">전체보기</a>
+					</div>
+				</td>
+			</tr>
+			<tr id="bbs">
+				<th>글번호</th>
+				<th>글제목</th>
+				<th>작성자</th>
+			</tr>
+			<c:forEach var="b" begin="0" end="10" items="${list }">
+				<tr id="bbs">
+					<td>${b.num }</td>
+					<td>
+						<a href="/buddi/bbs/detail?num=${b.num}">${b.title}</a>
+					</td>
+					<td>${b.author}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+	</div>
+	</div>
+	</div>
 		<div class="footer">footer</div>
 	</div>
 </body>

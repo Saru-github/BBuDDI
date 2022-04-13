@@ -48,4 +48,14 @@ public interface BuddiMapper {
 
 	int deleteFileInfo(int num);
 
+	void minusBall(Map<String, Object> map);
+	
+	void plusBall();
+	
+	void reTodayMon();
+	
+	void todayMon(int num);
+	
+	BuddiMonVO getTodayMon();
+
 }

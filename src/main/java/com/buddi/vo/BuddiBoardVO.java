@@ -1,5 +1,6 @@
 package com.buddi.vo;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class BuddiBoardVO
 	private String title;
 	private String author;
 	private String contents;
-	private java.sql.Date bdate;
+	private Timestamp bdate;
 	public List<BuddiAttachVO> attach = new ArrayList<>();
 	
 	public BuddiBoardVO() {}
@@ -20,8 +21,9 @@ public class BuddiBoardVO
 	
 	@Override
 	public String toString() {
-		return num + " " + title + " " + author + " " + contents + " " + attach;
+		return String.format("%d %s %s %s %s", num, title, author, contents , bdate);
 	}
+	
 
 	@Override
 	public boolean equals(Object obj) {
@@ -53,10 +55,10 @@ public class BuddiBoardVO
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public java.sql.Date getBdate() {
+	public Timestamp getBdate() {
 		return bdate;
 	}
-	public void setBdate(java.sql.Date bdate) {
+	public void setBdate(Timestamp bdate) {
 		this.bdate = bdate;
 	}
 	public List<BuddiAttachVO> getAttach() {

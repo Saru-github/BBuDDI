@@ -27,6 +27,13 @@
         FROM poketmon
         WHERE dNum=#{dNum}
     </select>
+    
+    <update id="minusBall" parameterType="map">
+    UPDATE user SET mBall = mBall-#{count} WHERE uid=#{uid}
+    </update>
+    <update id= "plusBall">
+    UPDATE user SET mBall = mBall+1
+    </update>
    <!-- 
     <select id="getUserList" 
     	resultType="com.buddi.vo.BuddiUserVO">
@@ -99,5 +106,17 @@
     <delete id="deleteFileInfo" parameterType="Integer">
     DELETE FROM attach WHERE att_num=#{num};
     </delete>
+    
+    
+       <update id= "reTodayMon" >
+    UPDATE poketmon SET toMon = 0 WHERE toMon=1
+    </update>
+    <update id= "todayMon" parameterType="Integer">
+    UPDATE poketmon SET toMon = 1 WHERE dNum=#{num}
+    </update>
+    
+    <select id="getTodayMon" resultType="com.buddi.vo.BuddiMonVO">
+    SELECT * FROM poketmon WHERE toMon=1
+    </select>
     
 </mapper>
