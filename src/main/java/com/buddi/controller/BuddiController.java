@@ -54,12 +54,16 @@ public class BuddiController {
 	}
 
 	@GetMapping("/mainc")
-	public String mainc(@SessionAttribute(name = "uid", required = false) String uid, Model model) {
+	public String mainc(@SessionAttribute(name = "uid", required = false) String uid, @SessionAttribute(name = "mon", required = false)BuddiMonVO mon, Model model) {
 
 		if (uid == null) {
 			return "redirect:/buddi/main"; // 로그인 폼으로 ...
 		} else {
 			BuddiUserVO user = svc.detailUser(uid);
+			
+			if (mon==null) {
+				model.addAttribute("mon", svc.getTodayMon());
+				}
 			
 			model.addAttribute("user", user);
 			model.addAttribute("list", svc.boardList());

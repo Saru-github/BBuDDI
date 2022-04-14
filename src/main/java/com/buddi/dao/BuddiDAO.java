@@ -70,7 +70,7 @@ public class BuddiDAO
 		return buddiMapper.login(vo)!=null;
 	}
 	
-	public BuddiMonVO getMonByNum(int dNum) {
+	public List<BuddiMonVO> getMonByNum(int dNum) {
 		return buddiMapper.getMonByNum(dNum);
 	}
 	
@@ -110,7 +110,7 @@ public class BuddiDAO
 		buddiMapper.plusBall();
 	}
 	
-	@Scheduled(cron = "0 0 5 * * * ")
+	@Scheduled(cron = "0 0 12 * * * ")
 	public void TodayMon() {
 		Random rd = new Random();
 		int dNum = rd.nextInt(159);

@@ -369,9 +369,9 @@ div>h2 {
 		</div>
 		<div class="a">
 			<h3>오늘의 포켓몬은 뭘까용?</h3>
-			<h2>No. ${mon.pNum}</h2>
+			<h2>No. ${mon.dNum}</h2>
 			<div id="mon">
-				<img src="../upload/poketmon/${mon.pNum}.gif" width="150px" height="200px">
+				<img src="../upload/poketmon/${mon.dNum}.gif" width="150px" height="200px">
 			</div>
 
 	<div class="7" style="width: 100%;">
@@ -395,32 +395,34 @@ div>h2 {
 				</td>
 			</tr>
 			<tr>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pNum}</td>
+				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.dNum}</td>
 				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pName}</td>
 				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pGrade}</td>
 				<td style="text-align: center;">
+					<div id="typefont" style= "font-size: large">
 					<div id="type"
-						style="background-color: 
-			<c:if test="${b.pType eq '불꽃'}">rgb(240, 128, 48);</c:if>
-			<c:if test="${b.pType eq '격투'}">rgb(192, 48, 40);</c:if>
-			<c:if test="${b.pType eq '에스퍼'}">rgb(220, 49, 101</c:if>
-			<c:if test="${b.pType eq '바위'}">rgb(158, 134, 61);</c:if>
-			<c:if test="${b.pType eq '물'}">rgb(2, 103, 194);</c:if>
-			<c:if test="${b.pType eq '땅'}">rgb(224, 192, 104);</c:if>
-			<c:if test="${b.pType eq '드래곤'}">rgb(78, 59, 164);</c:if>
-			<c:if test="${b.pType eq '독'}">rgb(107, 36, 110);</c:if>
-			<c:if test="${b.pType eq '노말'}">rgb(173, 165, 148);</c:if>
-			<c:if test="${b.pType eq '강철'}">rgb(142, 142, 159);</c:if>
-			<c:if test="${b.pType eq '벌레'}">rgb(136, 140, 14);</c:if>
-			<c:if test="${b.pType eq '고스트'}">rgb(105, 85, 130);</c:if>
-			<c:if test="${b.pType eq '악'}">rgb(60, 45, 35);</c:if>
-			<c:if test="${b.pType eq '비행'}">rgb(93, 115, 212);</c:if>
-			<c:if test="${b.pType eq '얼음'}">6dd3f5;</c:if>
-			<c:if test="${b.pType eq '전기'}">rgb(237, 169, 0);</c:if>
-			<c:if test="${b.pType eq '페어리'}">rgb(224, 142, 224);</c:if>
-			<c:if test="${b.pType eq '풀'}">rgb(56, 154, 2);</c:if>
+					style= "background-color: 
+			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 3}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 4}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 5}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 6}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 7}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 8}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 9}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 10}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 11}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 12}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 13}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 14}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 15}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 16}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 17}">${mon.rgb};</c:if>
+			<c:if test="${mon.type_num == 18}">${mon.rgb};</c:if>
 			"
-					>${mon.pType}
+					>${mon.type_name}
+					</div>
 					</div>
 				</td>
 			</tr>

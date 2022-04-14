@@ -4,6 +4,7 @@
 		
 <mapper namespace="com.buddi.mapper.BuddiMapper">
 
+	<!-- 유저 관련 -->
     <select id="login" 
     	resultType="String" 
     	parameterType="com.buddi.vo.BuddiUserVO">
@@ -20,20 +21,44 @@
         WHERE uid=#{uid}
     </select>
     
-    <select id="getMonByNum" 
-    	resultType="com.buddi.vo.BuddiMonVO"
-    	parameterType="Integer">
-        SELECT *
-        FROM poketmon
-        WHERE dNum=#{dNum}
-    </select>
-    
-    <update id="minusBall" parameterType="map">
+     <update id="minusBall" parameterType="map">
     UPDATE user SET mBall = mBall-#{count} WHERE uid=#{uid}
     </update>
     <update id= "plusBall">
     UPDATE user SET mBall = mBall+1
     </update>
+    
+    
+    
+     <!-- 포켓몬 관련 -->
+       <update id= "reTodayMon" >
+    UPDATE poketmon SET toMon = 0 WHERE toMon=1
+    </update>
+    <update id= "todayMon" parameterType="Integer">
+    UPDATE poketmon SET toMon = 1 WHERE dNum=#{num}
+    </update>
+    
+    <select id="getTodayMon" resultType="com.buddi.vo.BuddiMonVO">
+   		SELECT * 
+       	FROM poketmon p 
+       	LEFT OUTER JOIN ptype pt ON p.dNum=pt.po_num 
+       	LEFT OUTER JOIN type t ON pt.tp_num=t.type_num
+        WHERE toMon = 1
+    </select>
+    
+    
+    <select id="getMonByNum" 
+    	resultType="hashmap"
+    	parameterType="Integer">
+       	SELECT * 
+       	FROM poketmon p 
+       	LEFT OUTER JOIN ptype pt ON p.dNum=pt.po_num 
+       	LEFT OUTER JOIN type t ON pt.tp_num=t.type_num
+        WHERE dNum=#{dNum}
+        
+    </select>
+    
+    
    <!-- 
     <select id="getUserList" 
     	resultType="com.buddi.vo.BuddiUserVO">
@@ -76,6 +101,7 @@
     <delete id="deleteUser" parameterType="String">
     	DELETE FROM users WHERE uid=#{uid}
     </delete> -->
+    <!-- 게시판 관련 -->
     
     <insert id="addBoard" 
        parameterType="com.buddi.vo.BuddiBoardVO"
@@ -107,16 +133,6 @@
     DELETE FROM attach WHERE att_num=#{num};
     </delete>
     
-    
-       <update id= "reTodayMon" >
-    UPDATE poketmon SET toMon = 0 WHERE toMon=1
-    </update>
-    <update id= "todayMon" parameterType="Integer">
-    UPDATE poketmon SET toMon = 1 WHERE dNum=#{num}
-    </update>
-    
-    <select id="getTodayMon" resultType="com.buddi.vo.BuddiMonVO">
-    SELECT * FROM poketmon WHERE toMon=1
-    </select>
+   
     
 </mapper>

@@ -55,7 +55,7 @@ public class BuddiService {
 		return dao.delete(uid);
 	}
 
-	public BuddiMonVO detailMon(int dNum) {
+	public List<BuddiMonVO> detailMon(int dNum) {
 		return dao.getMonByNum(dNum);
 	}
 
@@ -69,7 +69,13 @@ public class BuddiService {
 		Random rd = new Random();
 		for (int i = 0; i < count; i++) {
 			int dNum = rd.nextInt(159) + 1;
-			list.add(dao.getMonByNum(dNum));
+			list = dao.getMonByNum(1);
+			
+				
+			list.get(0).setSubType_name(list.get(1).getType_name());
+			
+			System.out.println(list.get(1));
+			list.remove(1);	
 		}
 		Map<String, Object> map = new HashMap<>();
 		if (count == 11)
