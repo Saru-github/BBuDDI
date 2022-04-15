@@ -19,7 +19,7 @@ public interface BuddiMapper {
 
 	BuddiUserVO getUserById(String uid);
 
-	List<BuddiMonVO> getMonByNum(int dNum);
+	List<Map<String, Object>> getMonByNum(int dNum);
 
 	List<BuddiUserVO> getUserList();
 

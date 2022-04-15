@@ -21,14 +21,12 @@
 	width:50px;
 	height:20px;
 	margin-left: 20px;
-	background-color:white;
-	
+	color:window;
 }
 
 #type{
 	margin:1px;
 	border-radius:5px;
-	display:inline-block;
 	width:55px;
 	text-align:center;
 	color:window;
@@ -38,6 +36,7 @@
 
 nav{
 	text-align: right;
+	
 }
 
 #numcon{
@@ -181,9 +180,28 @@ jQuery(document).ready(function($){
         <span class="flipButton"></span>
         <section>
 			<div id="mon">
-							<div id="num">
-							
-								<div id="numcon">${b.dNum}</div>
+							<div id="num" style="background-color:
+			<c:if test="${b.type_num == 1}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 2}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 3}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 4}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 5}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 6}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 7}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 8}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 9}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 10}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 11}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 12}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 13}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 14}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 15}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 16}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 17}">${b.rgb};</c:if>
+			<c:if test="${b.type_num == 18}">${b.rgb};</c:if>
+			">
+								<div id="numcon">
+								${b.dNum}</div>
 							</div>
 							<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="100">
 			</div>
@@ -193,10 +211,10 @@ jQuery(document).ready(function($){
 			
 			
 			<div class="a" style="width: 100%;">
-		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid #dc3165;">
+		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid ${b.rgb};">
 			<tr>
 			</tr>
-			<tr style="background-color: #dc3165; color: white; ">
+			<tr style="background-color: ${b.rgb}; color: white; ">
 				<td class="1" colspan="1" style="text-align: center; width:10%; ">
 					<div>번호</div>
 				</td>
@@ -214,12 +232,11 @@ jQuery(document).ready(function($){
 			</tr>
 			
 			<tr style="height: 20px;">
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${b.dNum}</td>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${b.pName}</td>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${b.pGrade}</td>
+				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.dNum}</td>
+				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.pName}</td>
+				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.pGrade}</td>
 				<td style="text-align: center; height: 50px;">
-					<div id="type"
-						style="background-color: 
+					<div id ="type" style="background-color: 
 			<c:if test="${b.type_num == 1}">${b.rgb};</c:if>
 			<c:if test="${b.type_num == 2}">${b.rgb};</c:if>
 			<c:if test="${b.type_num == 3}">${b.rgb};</c:if>
@@ -240,29 +257,27 @@ jQuery(document).ready(function($){
 			<c:if test="${b.type_num == 18}">${b.rgb};</c:if>
 			">
 					${b.type_name}
-					</div>
-					
-			<c:if test="${mon.type_num != null}">
-					<div id="type"
-						style="background-color: 
-			<c:if test="${b.type_num == 1}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 2}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 3}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 4}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 5}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 6}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 7}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 8}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 9}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 10}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 11}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 12}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 13}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 14}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 15}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 16}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 17}">${b.rgb};</c:if>
-			<c:if test="${b.type_num == 18}">${b.rgb};</c:if>
+			</div>
+			<c:if test="${b.subType_num != null}">
+			<div id= "type" style="background-color: 
+			<c:if test="${b.subType_num == 1}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 2}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 3}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 4}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 5}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 6}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 7}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 8}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 9}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 10}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 11}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 12}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 13}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 14}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 15}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 16}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 17}">${b.subRgb};</c:if>
+			<c:if test="${b.subType_num == 18}">${b.subRgb};</c:if>
 			">
 					${b.subType_name}
 					</div>

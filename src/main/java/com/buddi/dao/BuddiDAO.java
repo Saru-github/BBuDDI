@@ -70,7 +70,7 @@ public class BuddiDAO
 		return buddiMapper.login(vo)!=null;
 	}
 	
-	public List<BuddiMonVO> getMonByNum(int dNum) {
+	public List<Map<String, Object>> getMonByNum(int dNum) {
 		return buddiMapper.getMonByNum(dNum);
 	}
 	

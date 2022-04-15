@@ -1,7 +1,6 @@
 package com.buddi.svc;
 
 import java.io.File;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,7 +54,7 @@ public class BuddiService {
 		return dao.delete(uid);
 	}
 
-	public List<BuddiMonVO> detailMon(int dNum) {
+	public List<Map<String, Object>> detailMon(int dNum) {
 		return dao.getMonByNum(dNum);
 	}
 
@@ -64,18 +63,32 @@ public class BuddiService {
 	}
 
 	public List<BuddiMonVO> getGachaResult(int count, String uid) {
-		List<BuddiMonVO> list = new ArrayList<>();
-
+		List<BuddiMonVO> list2 = new ArrayList<>();
 		Random rd = new Random();
+		
+		
 		for (int i = 0; i < count; i++) {
-			int dNum = rd.nextInt(159) + 1;
-			list = dao.getMonByNum(1);
+			BuddiMonVO vo = new BuddiMonVO();
+			int dNum = rd.nextInt(151) + 1;
+			List<Map<String, Object>> list = dao.getMonByNum(dNum);
+			Map<String, Object>map = list.get(0);
 			
-				
-			list.get(0).setSubType_name(list.get(1).getType_name());
+			vo.setdNum((int) map.get("dNum"));
+			vo.setpName((String) map.get("pName"));
+			vo.setpGrade((String) map.get("pGrade"));
+			vo.setRgb((String) map.get("rgb"));
+			vo.setType_num((int) map.get("type_num"));
+			vo.setType_name((String) map.get("type_name"));
 			
-			System.out.println(list.get(1));
-			list.remove(1);	
+			if(list.size()==2) {
+				map = list.get(1);
+			vo.setSubType_num((int)map.get("type_num"));
+			vo.setSubType_name((String)map.get("type_name"));
+			vo.setSubRgb((String) map.get("rgb"));
+			}
+			list2.add(vo);
+			
+			
 		}
 		Map<String, Object> map = new HashMap<>();
 		if (count == 11)
@@ -83,7 +96,7 @@ public class BuddiService {
 		map.put("count", count);
 		map.put("uid", uid);
 		dao.minusBall(map);
-		return list;
+		return list2;
 	}
 
 	public boolean addBoard(BuddiBoardVO board) {
