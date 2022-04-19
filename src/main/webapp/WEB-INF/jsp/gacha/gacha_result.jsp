@@ -41,7 +41,7 @@
 
 nav{
 	text-align: right;
-	
+	f
 }
 
 #numcon{

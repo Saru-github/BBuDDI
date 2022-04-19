@@ -9,8 +9,11 @@
 <style type="text/css">
 
 #container{
+width:100%;
+display : inline-block;
 text-align: center;
 position : center;
+margin : 0 auto;
 }
 
 #album{
@@ -22,7 +25,8 @@ margin-right:20px;
 
 
 #detail {
-width: 800px;
+margin-left:5%;
+width: 30%;
 height: 800px;
 float: left;
 display: inline-block;
@@ -30,9 +34,10 @@ display: inline-block;
 }
 
 #box{
-width: 800px;
+width: 60%;
 hegiht: 800px;
 float: left;
+text-align: center;
 }
 #ea {
 float:right;
@@ -41,11 +46,11 @@ font-weight:bold;
 
 #name{
 text-align:center;
-font-wegiht:bold;
+font-weight:bold;
 }
 #grade{
 float: left;
-font-wegiht:bold;
+font-weight:bold;
 }
 
 </style>
@@ -72,6 +77,7 @@ font-wegiht:bold;
 			</div>
 
 <div id="box">
+<h1>포켓몬 도감</h1>
 <c:forEach var="b" items="${own}" >
 <div id="album">
 	<div id= "grade"> ${b.pGrade}</div>
