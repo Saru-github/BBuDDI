@@ -58,4 +58,12 @@ public interface BuddiMapper {
 	
 	BuddiMonVO getTodayMon();
 
+	int addPoUser(Map<String, Object> map);
+	
+	void insertPoUser(Map<String, Object> map);
+	
+	int getUserNumById(String uid);
+	
+	List<BuddiMonVO> getOwnMon(String uid);
+
 }

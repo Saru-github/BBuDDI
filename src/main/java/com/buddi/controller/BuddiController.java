@@ -116,8 +116,9 @@ public class BuddiController {
 	public String detail(@SessionAttribute(name = "uid") String uid, Model model) {
 
 		BuddiUserVO user = svc.detailUser(uid);
-
+		List<BuddiMonVO> own = svc.getOwnMon(uid); 
 		model.addAttribute("user", user);
+		model.addAttribute("own", own);
 
 		return "/detail/detail_user";
 	}

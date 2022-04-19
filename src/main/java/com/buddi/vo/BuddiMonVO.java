@@ -15,6 +15,7 @@ public class BuddiMonVO {
 	public String subType_name;
 	public String subRgb;
 	public int gachaNum;
+	public int po_ea;
 
 
 
@@ -31,7 +32,7 @@ public class BuddiMonVO {
 
 	@Override
 	public String toString() {
-		return String.format("%d %s %s %s %d %s %d %s %s", dNum, pName, pGrade, rgb, type_name, subType_num ,subType_name, subRgb );
+		return String.format("%d %s %s %s %d %s %d %s %s %d", dNum, pName, pGrade, rgb, type_name, subType_num ,subType_name, subRgb, po_ea );
 	}
 
 	public int getdNum() {
@@ -115,6 +116,14 @@ public class BuddiMonVO {
 
 	public void setGachaNum(int gachaNum) {
 		this.gachaNum = gachaNum;
+	}
+
+	public int getPo_ea() {
+		return po_ea;
+	}
+
+	public void setPo_ea(int po_ea) {
+		this.po_ea = po_ea;
 	}
 
 	

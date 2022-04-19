@@ -56,16 +56,18 @@ a:hover{
 
 
 .container {
-	whidth: 96%;
+	whidth: 100%;
 	margin: 0 auto;
 	display: grid;
 	align-content: space-around;
 	justify-content: space-around;
 	justify-items: stretch; 
-	grid-template-areas: "header header header" "   a    main    b   "
-		"   c    main    d   " "footer footer footer";
+	grid-template-areas: "header header header" 
+						 "   a    main    b   "
+						 "   c    main    d   " 
+						 "footer footer footer";
 	grid-template-columns: 400px 1000px auto;
-	grid-template-rows: repeat(3, minmax(100px, auto));
+	grid-template-rows: repeat(3, minmax(50px, auto));
 	overflow: hidden;
 	justify-content: space-around;
 	justify-items: stretch;
@@ -74,41 +76,35 @@ a:hover{
 
 .allbbs{
 	text-align: right;
-	margin-right: 30px;
 	font-size:large;
 }
 
 .header {
 	grid-area: header;
-	width: 99%;
-	border: 3px solid black;
-	font-size: xx-large;
-	text-align: center;
-	height: 100px;
-	border: 3px solid black;
-}
-
-#topMenu {
-	grid-area: header;
 	width: 100%;
 	border: 3px solid black;
 	font-size: xx-large;
 	text-align: center;
-	height: 100px;
+	height: 50px;
 	border: 3px solid black;
 }
 
+#topMenu {
+	display:inline-block;
+	width: 100%;
+	text-align: center;
+}
+
 #topMenu ul{
-	width:100%;
-	text-align:center;
-	vertical-align:middle;
+display:inline-block;
+	width: 100%;
+	text-align: center;
 }
 
 #topMenu ul li { 
 	list-style:none;  color:white; 
 	background-color:#2d2d2d; 
 	float:left; 
-	margin-top: 50px;
 	line-height:50px; 
 	vertical-align:middle; 
 	text-align:center; 
@@ -138,7 +134,7 @@ div > h2{
 #topMenu .menuLink { 
 	text-decoration:none; color:white;
 	display:block;
-	width:320px; font-size:12px; 
+	width:300px; font-size:20px; 
 	font-weight:bold; font-family:"Trebuchet MS", Dotum, Arial;
 	
 }
@@ -365,12 +361,12 @@ a:hover{
 		<div class = "header">
 		<nav id="topMenu">
 			<ul>
-				<li><a class="menuLink" href="#">About us</a></li>
-				<li><a class="menuLink" href="#">Ministries</a></li>
-				<li><a class="menuLink" href="#">Community</a></li>
-				<li><a class="menuLink" href="#">Locations</a></li>
-				<li><a class="menuLink" href="#">Blog</a></li>
-				<li><a class="menuLink" href="#">Blog</a></li>
+				<li><a class="menuLink" href="/buddi/join">회원가입</a></li>
+				<li><a class="menuLink" href="/buddi/bbs/list">거래게시판</a></li>
+				<li><a class="menuLink" href="/buddi/chat">거래채팅</a></li>
+				<li><a class="menuLink" href="/buddi/gacha">포켓몬뽑기</a></li>
+				<li><a class="menuLink" href="#">포켓몬자랑</a></li>
+				<li><a class="menuLink" href="/buddi/detail">회원정보수정</a></li>
 			</ul>
 
 		</nav>

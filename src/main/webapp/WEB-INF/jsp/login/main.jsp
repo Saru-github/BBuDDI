@@ -357,12 +357,12 @@ div>h2 {
 		<div class = "header">
 		<nav id="topMenu">
 			<ul>
-				<li><a class="menuLink" href="#">About us</a></li>
-				<li><a class="menuLink" href="#">Ministries</a></li>
-				<li><a class="menuLink" href="#">Community</a></li>
-				<li><a class="menuLink" href="#">Locations</a></li>
-				<li><a class="menuLink" href="#">Blog</a></li>
-				<li><a class="menuLink" href="#">Blog</a></li>
+				<li><a class="menuLink" href="buddi/join">회원가입</a></li>
+				<li><a class="menuLink" href="buddi/bbs/list">거래게시판</a></li>
+				<li><a class="menuLink" href="buddi/chat">거래채팅</a></li>
+				<li><a class="menuLink" href="buddi/gacha">포켓몬뽑기</a></li>
+				<li><a class="menuLink" href="#">포켓몬자랑</a></li>
+				<li><a class="menuLink" href="buddi/detail">회원정보수정</a></li>
 			</ul>
 
 		</nav>

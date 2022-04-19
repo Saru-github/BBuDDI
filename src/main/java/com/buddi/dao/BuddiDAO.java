@@ -1,5 +1,6 @@
 package com.buddi.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -74,6 +75,10 @@ public class BuddiDAO
 		return buddiMapper.getMonByNum(dNum);
 	}
 	
+	public List<BuddiMonVO> getOwnMon(String uid){
+		return buddiMapper.getOwnMon(uid);
+	}
+	
 	public boolean addBoard(BuddiBoardVO board) {
 		return buddiMapper.addBoard(board) > 0;
 
@@ -120,5 +125,16 @@ public class BuddiDAO
 	
 	public BuddiMonVO getTodayMon() {
 		return buddiMapper.getTodayMon();
+	}
+
+
+	public void addPoUser(int dNum,String uid) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("dNum", dNum);
+		map.put("user_num" , buddiMapper.getUserNumById(uid));
+		if(buddiMapper.addPoUser(map)<1) {
+			buddiMapper.insertPoUser(map);
+		}
+		
 	}
 }

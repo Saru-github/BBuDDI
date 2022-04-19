@@ -108,6 +108,7 @@ public class BuddiService {
 			Map<String, Object> map = list.get(0);
 
 			vo.setdNum((int) map.get("dNum"));
+			dao.addPoUser(vo.getdNum(), uid);
 			vo.setpName((String) map.get("pName"));
 			vo.setpGrade((String) map.get("pGrade"));
 			vo.setRgb((String) map.get("rgb"));
@@ -132,6 +133,12 @@ public class BuddiService {
 		map.put("uid", uid);
 		dao.minusBall(map);
 		return list2;
+	}
+	
+	
+	public List<BuddiMonVO> getOwnMon(String uid) {
+		List<BuddiMonVO> list = dao.getOwnMon(uid);
+		return list;
 	}
 
 	public boolean addBoard(BuddiBoardVO board) {
@@ -274,5 +281,6 @@ public class BuddiService {
 
 		return false;
 	}
+
 
 }

@@ -21,6 +21,27 @@
         WHERE uid=#{uid}
     </select>
     
+    <select id="getUserNumById" 
+    	resultType="Integer"
+    	parameterType="String">
+        SELECT uNum
+        FROM user
+        WHERE uid=#{uid}
+    </select>
+    
+    
+    <update id="addPoUser"
+    	parameterType="Integer">
+    	UPDATE getpo SET po_ea = po_ea+1 WHERE user_num=#{user_num} AND po_num=#{dNum}
+    </update>
+    
+    <insert id="insertPoUser"
+    	parameterType ="map">
+    	INSERT INTO getpo VALUES(NULL,#{user_num},#{dNum},1)
+    
+    </insert>
+    
+    
      <update id="minusBall" parameterType="map">
     UPDATE user SET mBall = mBall-#{count} WHERE uid=#{uid}
     </update>
@@ -58,7 +79,16 @@
         
     </select>
     
-    
+    <select id="getOwnMon"
+    	resultType="com.buddi.vo.BuddiMonVO"
+    	parameterType="String">
+    	SELECT g.po_ea, p.dNum, p.pName, p.pGrade
+    	FROM user u 
+    	LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
+		LEFT OUTER JOIN  poketmon p ON g.po_num=p.dNum 
+		WHERE u.uid = #{uid} ORDER BY p.dNum
+    	</select>
+    	
    <!-- 
     <select id="getUserList" 
     	resultType="com.buddi.vo.BuddiUserVO">
