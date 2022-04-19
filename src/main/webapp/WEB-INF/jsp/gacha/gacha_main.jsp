@@ -126,7 +126,7 @@ nav {
 	<br>
 	
 	<div class = "gacha">
-			<a href = "/buddi/gogacha" >11회뽑기</a>
+			<a href = "/buddi/gogacha?strCount=11" >11회뽑기</a>
 			<a href = "/buddi/gogacha?strCount=1" >1회뽑기</a>
 	</div>
 </body>

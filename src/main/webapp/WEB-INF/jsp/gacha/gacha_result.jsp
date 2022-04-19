@@ -16,6 +16,11 @@
 
 }
 
+
+#gachanum{
+	font-weight:  bold;
+}
+
 #num{
 	border-radius:20px;
 	width:50px;
@@ -179,6 +184,12 @@ jQuery(document).ready(function($){
       <div class="back">
         <span class="flipButton"></span>
         <section>
+        	<div id ="gachanum" style = "text-align: right; magin-right:20px;">
+        	
+        	<c:if test="${b.gachaNum!=11}">${b.gachaNum}번째 뽑기</c:if>
+        	<c:if test="${b.gachaNum==11}">${b.gachaNum-1}+1번째 뽑기</c:if>
+        	
+        	</div>
 			<div id="mon">
 							<div id="num" style="background-color:
 			<c:if test="${b.type_num == 1}">${b.rgb};</c:if>
@@ -201,11 +212,11 @@ jQuery(document).ready(function($){
 			<c:if test="${b.type_num == 18}">${b.rgb};</c:if>
 			">
 								<div id="numcon">
-								${b.dNum}</div>
+								${b.dNum}</div> 
 							</div>
-							<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="100">
+							
+							<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="90">
 			</div>
-			<br> 
 			<br> 
 			
 			
@@ -231,11 +242,11 @@ jQuery(document).ready(function($){
 				</td>
 			</tr>
 			
-			<tr style="height: 20px;">
+			<tr style="height: 12px;">
 				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.dNum}</td>
 				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.pName}</td>
 				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.pGrade}</td>
-				<td style="text-align: center; height: 50px;">
+				<td style="text-align: center; height: 40px;">
 					<div id ="type" style="background-color: 
 			<c:if test="${b.type_num == 1}">${b.rgb};</c:if>
 			<c:if test="${b.type_num == 2}">${b.rgb};</c:if>
@@ -292,7 +303,6 @@ jQuery(document).ready(function($){
 			
 			
 			
-        </section> 
       </div>
     </div> 
     
@@ -300,6 +310,7 @@ jQuery(document).ready(function($){
   </c:forEach>
   
   <button type="button" id="allButton">돌려돌려</button>
+        </section> 
   <nav>
   <img src="../upload/ball.jpg" width="50" height="50">&nbsp;&nbsp;&nbsp;X${user.mBall}
   <a href = "/buddi/gogacha?strCount=11" >10+1회뽑기</a><br>

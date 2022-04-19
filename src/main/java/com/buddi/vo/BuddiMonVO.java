@@ -14,6 +14,7 @@ public class BuddiMonVO {
 	public int subType_num;
 	public String subType_name;
 	public String subRgb;
+	public int gachaNum;
 
 
 
@@ -106,6 +107,14 @@ public class BuddiMonVO {
 
 	public void setSubRgb(String subRgb) {
 		this.subRgb = subRgb;
+	}
+
+	public int getGachaNum() {
+		return gachaNum;
+	}
+
+	public void setGachaNum(int gachaNum) {
+		this.gachaNum = gachaNum;
 	}
 
 	

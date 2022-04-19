@@ -65,30 +65,65 @@ public class BuddiService {
 	public List<BuddiMonVO> getGachaResult(int count, String uid) {
 		List<BuddiMonVO> list2 = new ArrayList<>();
 		Random rd = new Random();
-		
-		
 		for (int i = 0; i < count; i++) {
 			BuddiMonVO vo = new BuddiMonVO();
-			int dNum = rd.nextInt(151) + 1;
-			List<Map<String, Object>> list = dao.getMonByNum(dNum);
-			Map<String, Object>map = list.get(0);
+			int avgNum = rd.nextInt(1000)+1;
 			
+			
+			int dNum = 0;
+			int[] sssr = {1,4,7,25,133,143,150,151};
+			int[] ssr = {2, 3, 5, 6, 8, 9, 26, 132, 144, 145, 146, 146, 148, 149};
+			int[] sr = {12,16,17,18,35,37,38,52,54,63,64,65,79,80,89,95,
+						113,116,121,129,130,134,135,136,142};
+			int[] r = {10,11,13,14,15,19,20,21,22,23,24,27,28,29,30,31,32,33,34,
+					36,39,40,41,42,43,44,45,46,47,48,49,50,51,53,55,56,57,58,59,
+					60,61,62,66,67,68,69,70,71,72,73,74,75,76,77,78,81,82,83,84,
+					85,86,87,88,90,91,92,93,94,96,97,98,99,100,101,102,103,104,105,
+					106,107,108,109,110,111,112,114,115,117,118,119,120,122,123,124,125,
+					126,127,128,131,137,138,139,140,141};
+			
+				if (1 < avgNum && avgNum < 50) {
+					dNum =sssr[rd.nextInt(8)];
+					
+				} else if(50 < avgNum && avgNum < 150) {
+					dNum =ssr[rd.nextInt(14)];
+				} else if (150 < avgNum && avgNum < 300) {
+					dNum =sr[rd.nextInt(25)];
+				} else {
+					dNum =r[rd.nextInt(104)];
+				}
+				
+				if(i == 10) {
+					if(1 < avgNum && avgNum < 50) {
+						dNum =sssr[rd.nextInt(8)];
+					} else if (50 < avgNum && avgNum < 350) {
+						dNum =ssr[rd.nextInt(14)];
+					} else {
+						dNum =sr[rd.nextInt(25)];
+					}
+					
+				}
+			
+			List<Map<String, Object>> list = dao.getMonByNum(dNum);
+			Map<String, Object> map = list.get(0);
+
 			vo.setdNum((int) map.get("dNum"));
 			vo.setpName((String) map.get("pName"));
 			vo.setpGrade((String) map.get("pGrade"));
 			vo.setRgb((String) map.get("rgb"));
 			vo.setType_num((int) map.get("type_num"));
 			vo.setType_name((String) map.get("type_name"));
+			vo.setGachaNum(i+1);
 			
-			if(list.size()==2) {
+			if (list.size() == 2) {
 				map = list.get(1);
-			vo.setSubType_num((int)map.get("type_num"));
-			vo.setSubType_name((String)map.get("type_name"));
-			vo.setSubRgb((String) map.get("rgb"));
+				vo.setSubType_num((int) map.get("type_num"));
+				vo.setSubType_name((String) map.get("type_name"));
+				vo.setSubRgb((String) map.get("rgb"));
 			}
+			
 			list2.add(vo);
-			
-			
+
 		}
 		Map<String, Object> map = new HashMap<>();
 		if (count == 11)
@@ -161,12 +196,12 @@ public class BuddiService {
 			board.setNum(bnum);
 			board.setTitle((String) m.get("title"));
 			board.setAuthor((String) m.get("author"));
-			String strDate= m.get("bdate").toString();
+			String strDate = m.get("bdate").toString();
 			String strD = strDate.replace("T", " ");
 			java.sql.Timestamp ts = Timestamp.valueOf(strD);
 			board.setBdate(ts);
-			
-			//board.setBdate(java.sql.Date.valueOf((String) m.get("author")));
+
+			// board.setBdate(java.sql.Date.valueOf((String) m.get("author")));
 
 			if (m.get("filename") != null) // 첨부파일을 가진 글이라면...
 			{
@@ -198,7 +233,7 @@ public class BuddiService {
 				board.setTitle((String) map.get("title"));
 				board.setAuthor((String) map.get("author"));
 				board.setContents((String) map.get("contents"));
-				String strDate= map.get("bdate").toString();
+				String strDate = map.get("bdate").toString();
 				String strD = strDate.replace("T", " ");
 				java.sql.Timestamp ts = Timestamp.valueOf(strD);
 				board.setBdate(ts);

@@ -52,7 +52,7 @@ public class BuddiController {
 		model.addAttribute("list", svc.boardList());
 		return "login/main";
 	}
-
+ 
 	@GetMapping("/mainc")
 	public String mainc(@SessionAttribute(name = "uid", required = false) String uid, @SessionAttribute(name = "mon", required = false)BuddiMonVO mon, Model model) {
 
@@ -137,6 +137,9 @@ public class BuddiController {
 	public String gogacha(@RequestParam String strCount, @SessionAttribute(name = "uid") String uid, Model model) {
 		List<BuddiMonVO> result = new ArrayList<>();
 		int count = Integer.parseInt(strCount);
+		if(uid == null) {
+			return "redirect:/buddi/main";
+		}
 		result = svc.getGachaResult(count, uid);
 		BuddiUserVO user = svc.detailUser(uid);
 
