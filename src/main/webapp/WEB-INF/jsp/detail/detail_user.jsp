@@ -21,9 +21,10 @@ margin : 0 auto;
 
 #album{
 width:20%;
-height:250px;
+height:200px;
 float: left;
-margin-right:20px;
+border: 1px solid black;
+padding:5px;
 }
 
 
@@ -56,6 +57,7 @@ width: 50%;
 hegiht: 800px;
 float: left;
 text-align: center;
+font-size:x-large;
 }
 #ea {
 float:right;
@@ -63,7 +65,6 @@ font-weight:bold;
 }
 
 #name{
-text-align:center;
 font-weight:bold;
 }
 #grade{
@@ -78,8 +79,8 @@ font-weight:bold;
 
 #dogam{
 margin-right : 100px;
-margin-top : 50px;
-margin-bottom: 50px;
+margin-top : 40px;
+margin-bottom: 40px;
 }
 
 .red{color:red;}
@@ -116,9 +117,9 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 				<div id="ball">
 					<img src="../upload/ball.jpg" width="50" height="50">&nbsp;&nbsp;&nbsp;X${user.mBall}
 				</div>
+			</div>
 			<div class="logout">
 				[<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]
-			</div>
 			</div>
 				</div>
 
@@ -127,15 +128,17 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 <h1>포켓몬 도감</h1>
 </div>
 <c:forEach var="b" items="${pu.list}" >
-<div id="album">
+<div id="album" style=" padding:20px; ">
 	<div id= "grade"> ${b.pGrade}</div>
 	<div id= "ea"> 보유: ${b.po_ea}</div>
 	<br>
 	<div id = "poimg" style="margin-top:20px;">
-	<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="120">
+	<img src="../upload/poketmon/${b.dNum}.gif" width="80" height="100">
 	</div>
 	<br>
-	<div id = "name">${b.dNum} ${b.pName} </div>
+	<div id = "name" style="padding-bottom:20px;">${b.dNum}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${b.pName} 
+	<br>
+	</div>
 </div>	
 </c:forEach>
 <div id="num">

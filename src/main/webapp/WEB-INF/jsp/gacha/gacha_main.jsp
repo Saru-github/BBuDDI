@@ -108,6 +108,7 @@ nav {
 			">
 					${mon.type_name}
 			</div>
+			<br>
 			<c:if test="${mon.subType_num != null}">
 			<div id= "type" style=" margin:2px; background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>

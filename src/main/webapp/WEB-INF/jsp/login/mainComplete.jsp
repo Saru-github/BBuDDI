@@ -503,7 +503,7 @@ a:hover{
 			<tr>
 				<td colspan="5" style="border: white; text-align: right;">
 					<div id= "all">
-					<a href="/buddi/bbs/add">전체보기</a>
+					<a href="/buddi/bbs/list">전체보기</a>
 					</div>
 				</td>
 			</tr>

@@ -85,7 +85,8 @@
     	SELECT * FROM 
     	(SELECT g.po_ea, p.dNum, p.pName, p.pGrade FROM user u 
 		LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
-		LEFT OUTER JOIN poketmon p ON g.po_num=p.dNum 
+		LEFT OUTER JOIN poketmon p ON g.po_num=p.dNum
+		 
  		WHERE u.uid =#{uid} ORDER BY p.dNum LIMIT #{page},12)t1,
  		(SELECT COUNT(*) totalcnt FROM user u 
 		LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
@@ -151,7 +152,7 @@
     	DELETE FROM users WHERE uid=#{uid}
     </delete> -->
     <!-- 게시판 관련 -->
-    
+    ㄹㄷ3ㅇㄴ3 ㅀ쇼ㅕㅏㅑㅓㅂ	ㅈㄷㅇㅁㄴㅇㅌㄱㄹㅊㅎ포ㅠㅓㅜㅏ
     <insert id="addBoard" 
        parameterType="com.buddi.vo.BuddiBoardVO"
        useGeneratedKeys="true" keyProperty="num">

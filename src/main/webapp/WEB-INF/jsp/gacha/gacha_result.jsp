@@ -318,6 +318,7 @@ jQuery(document).ready(function($){
   <a href = "/buddi/mainc" >메인으로</a>
   </nav>
   </div>
+  
 </section>
 
 </body>
