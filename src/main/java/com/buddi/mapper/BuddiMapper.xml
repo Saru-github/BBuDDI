@@ -81,13 +81,32 @@
     
     <select id="getOwnMon"
     	resultType="com.buddi.vo.BuddiMonVO"
-    	parameterType="String">
-    	SELECT g.po_ea, p.dNum, p.pName, p.pGrade
-    	FROM user u 
-    	LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
-		LEFT OUTER JOIN  poketmon p ON g.po_num=p.dNum 
-		WHERE u.uid = #{uid} ORDER BY p.dNum
+    	parameterType="map">
+    	SELECT * FROM 
+    	(SELECT g.po_ea, p.dNum, p.pName, p.pGrade FROM user u 
+		LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
+		LEFT OUTER JOIN poketmon p ON g.po_num=p.dNum 
+ 		WHERE u.uid =#{uid} ORDER BY p.dNum LIMIT #{page},12)t1,
+ 		(SELECT COUNT(*) totalcnt FROM user u 
+		LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
+		LEFT OUTER JOIN poketmon p ON g.po_num=p.dNum 
+		WHERE u.uid =#{uid} ORDER BY p.dNum)t2;
     	</select>
+    	
+ <!--    <select id="getOwnM"
+    	resultType="map"
+    	parameterType="map">
+    	SELECT * FROM 
+    	(SELECT g.po_ea, p.dNum, p.pName, p.pGrade FROM user u 
+		LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
+		LEFT OUTER JOIN poketmon p ON g.po_num=p.dNum 
+ 		WHERE u.uid =#{uid} ORDER BY p.dNum LIMIT (#{page}-1)*5,5)t1,
+ 		(SELECT COUNT(*) totalcnt FROM user u 
+		LEFT OUTER JOIN getpo g ON u.uNum=g.user_num 
+		LEFT OUTER JOIN poketmon p ON g.po_num=p.dNum 
+		WHERE u.uid =#{uid} ORDER BY p.dNum)t2;
+    	</select> -->
+    	
     	
    <!-- 
     <select id="getUserList" 

@@ -56,7 +56,7 @@ public interface BuddiMapper {
 	
 	void todayMon(int num);
 	
-	BuddiMonVO getTodayMon();
+	List<BuddiMonVO> getTodayMon();
 
 	int addPoUser(Map<String, Object> map);
 	
@@ -64,6 +64,10 @@ public interface BuddiMapper {
 	
 	int getUserNumById(String uid);
 	
-	List<BuddiMonVO> getOwnMon(String uid);
+	List<BuddiMonVO> getOwnMon(Map<String, Object> map);
+	
+//	List<Map<String, Object>> getPaging (Map<String, Object> map);
+	
+	
 
 }

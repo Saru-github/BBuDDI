@@ -75,9 +75,20 @@ public class BuddiDAO
 		return buddiMapper.getMonByNum(dNum);
 	}
 	
-	public List<BuddiMonVO> getOwnMon(String uid){
-		return buddiMapper.getOwnMon(uid);
+	public List<BuddiMonVO> getOwnMon(String uid, int page){
+		Map<String, Object> map = new HashMap<>();
+		map.put("uid", uid);
+		map.put("page", (page-1)*12);
+		return buddiMapper.getOwnMon(map);
 	}
+	
+//	public List<Map<String, Object>> getPaging(String uid, int page) {
+//		Map<String, Object> map = new HashMap<>();
+//		map.put("uid", uid);
+//		map.put("page", page);
+//		
+//		return buddiMapper.getPaging(map);
+//	}
 	
 	public boolean addBoard(BuddiBoardVO board) {
 		return buddiMapper.addBoard(board) > 0;
@@ -123,7 +134,7 @@ public class BuddiDAO
 		buddiMapper.todayMon(dNum);
 	}
 	
-	public BuddiMonVO getTodayMon() {
+	public List<BuddiMonVO> getTodayMon() {
 		return buddiMapper.getTodayMon();
 	}
 

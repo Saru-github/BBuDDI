@@ -32,6 +32,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.buddi.svc.BuddiService;
 import com.buddi.vo.BuddiBoardVO;
 import com.buddi.vo.BuddiMonVO;
+import com.buddi.vo.BuddiPagingVO;
 import com.buddi.vo.BuddiUserVO;
 
 @Controller
@@ -113,12 +114,13 @@ public class BuddiController {
 	}
 
 	@GetMapping("/detail")
-	public String detail(@SessionAttribute(name = "uid") String uid, Model model) {
+	public String detail(@SessionAttribute(name = "uid") String uid,@RequestParam String page, Model model) {
 
 		BuddiUserVO user = svc.detailUser(uid);
-		List<BuddiMonVO> own = svc.getOwnMon(uid); 
+		int pageNum = Integer.parseInt(page);
+		BuddiPagingVO pu = svc.getOwnMon(uid, pageNum); 
 		model.addAttribute("user", user);
-		model.addAttribute("own", own);
+		model.addAttribute("pu", pu);
 
 		return "/detail/detail_user";
 	}

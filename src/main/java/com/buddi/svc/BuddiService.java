@@ -22,6 +22,7 @@ import com.buddi.dao.BuddiDAO;
 import com.buddi.vo.BuddiAttachVO;
 import com.buddi.vo.BuddiBoardVO;
 import com.buddi.vo.BuddiMonVO;
+import com.buddi.vo.BuddiPagingVO;
 import com.buddi.vo.BuddiUserVO;
 
 @Component
@@ -59,7 +60,15 @@ public class BuddiService {
 	}
 
 	public BuddiMonVO getTodayMon() {
-		return dao.getTodayMon();
+		List<BuddiMonVO> list = dao.getTodayMon();
+		BuddiMonVO vo = new BuddiMonVO();
+		if (list.size()==2) {
+			vo =list.get(0);
+			vo.setSubType_num(list.get(1).getType_num());
+			vo.setSubType_name(list.get(1).getType_name());
+			vo.setSubRgb(list.get(1).getRgb());
+		}
+		return vo;
 	}
 
 	public List<BuddiMonVO> getGachaResult(int count, String uid) {
@@ -136,10 +145,31 @@ public class BuddiService {
 	}
 	
 	
-	public List<BuddiMonVO> getOwnMon(String uid) {
-		List<BuddiMonVO> list = dao.getOwnMon(uid);
-		return list;
+	public BuddiPagingVO getOwnMon(String uid, int page) {
+		List<BuddiMonVO> list = dao.getOwnMon(uid, page);
+		BuddiPagingVO pu = new BuddiPagingVO();
+		int totalCnt= list.get(0).getTotalCnt();
+		pu.setList(list);
+		pu.setRowsPerScreen(2);
+		pu.setCurrentPage(page);
+		pu.setTotalPages((int)Math.ceil(totalCnt/3.0));
+		pu.setTotalRows(list.get(0).getTotalCnt());
+		pu.setNavCount(5);
+		
+		return pu;
 	}
+	
+//	public List<Map<String, Object>> getPaging(String uid, int page){
+//		
+//		List<Map<String, Object>> list = dao.getPaging(uid, page);
+//		for (int i = 0; i< list.size(); i++) {
+//			
+//		Map<String, Object> map = list.get(i);
+//		}
+//		
+//		
+//		return map;
+//	}
 
 	public boolean addBoard(BuddiBoardVO board) {
 		return dao.addBoard(board);

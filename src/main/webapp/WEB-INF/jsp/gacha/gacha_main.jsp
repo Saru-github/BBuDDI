@@ -54,41 +54,39 @@ nav {
 
 <body>
 	<div class="a">
-		오늘의 포켓몬은 뭘까용?
-		<h2>${mon.pName}</h2>
-		<div id="mon">
-			<img src="../upload/poketmon/${mon.dNum}.gif" width="300" height="400">
-		</div>
-	</div>
+		<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
+			<h3 style="margin-top:10px; margin-bottom:30px;">No. ${mon.dNum}</h3>
+			<div id="mon" style="margin-bottom:30px;">
+				<img src="../upload/poketmon/${mon.dNum}.gif" width="100px" height="150px">
+			</div>
 
-	<div class="a" style="width: 1000px;">
-		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid #dc3165;">
+	<div class="7" style="width: 100%;">
+		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid ${mon.rgb};">
 			<tr>
 			</tr>
-			<tr style="background-color: #dc3165; color: white; ">
-				<td class="1" colspan="1" style="text-align: center; width:10%; ">
+			<tr style="background-color: ${mon.rgb}; color: white; font-size:large;">
+				<td class="1" colspan="1" style="text-align: center; width:20%; ">
 					<div>번호</div>
 				</td>
-				<td rowspan="1" style="text-align: center; width:45%;">
+				<td rowspan="1" style="text-align: center; width:40%;">
 					<div>이름</div>
 				</td>
-				<td rowspan="1" style="text-align: center; width:20%;">
+				<td rowspan="1" style="text-align: center; width:15%;">
 					<div>등급</div>
 				</td>
-				<td rowspan="1" style="text-align: center; width:20%; ">
+				<td rowspan="1" style="text-align: center; width:25%; ">
 					<div>
 						<span style="color: white">타입</span>
 					</div>
 				</td>
 			</tr>
-			<tr>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.dNum}</td>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pName}</td>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pGrade}</td>
-				<td style="text-align: center;">
-					
-					<div id="type"
-						style="background-color: 
+			
+			<tr style="height: 30px; font-size:large;">
+				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.dNum}</td>
+				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pName}</td>
+				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pGrade}</td>
+				<td style="text-align: center; height: 40px;">
+					<div id ="type" style="margin:2px; background-color: 
 			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 3}">${mon.rgb};</c:if>
@@ -108,10 +106,33 @@ nav {
 			<c:if test="${mon.type_num == 17}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 18}">${mon.rgb};</c:if>
 			">
-					<c:forEach var= "b" items ="${mon.type_name}" >
-					${b}
-					</c:forEach>
+					${mon.type_name}
+			</div>
+			<c:if test="${mon.subType_num != null}">
+			<div id= "type" style=" margin:2px; background-color: 
+			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 4}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 5}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 6}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 7}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 8}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 9}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 10}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 11}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 12}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 13}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 14}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 15}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 16}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 17}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 18}">${mon.subRgb};</c:if>
+			">
+					${mon.subType_name}
 					</div>
+			</c:if>
+			
 				</td>
 			</tr>
 			</tbody>

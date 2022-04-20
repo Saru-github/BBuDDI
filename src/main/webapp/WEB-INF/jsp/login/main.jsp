@@ -151,7 +151,6 @@ div>h2 {
 .a {
 	grid-area: a;
 	border: 3px solid black;
-	font-size: x-large;
 	text-align: center;
 	height: 500px;
 }
@@ -368,40 +367,39 @@ div>h2 {
 		</nav>
 		</div>
 		<div class="a">
-			<h3>오늘의 포켓몬은 뭘까용?</h3>
-			<h2>No. ${mon.dNum}</h2>
-			<div id="mon">
-				<img src="../upload/poketmon/${mon.dNum}.gif" width="150px" height="200px">
+			<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
+			<h3 style="margin-top:10px; margin-bottom:30px;">No. ${mon.dNum}</h3>
+			<div id="mon" style="margin-bottom:30px;">
+				<img src="../upload/poketmon/${mon.dNum}.gif" width="100px" height="150px">
 			</div>
 
 	<div class="7" style="width: 100%;">
-		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid #dc3165;">
+		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid ${mon.rgb};">
 			<tr>
 			</tr>
-			<tr style="background-color: #dc3165; color: white; ">
-				<td class="1" colspan="1" style="text-align: center; width:10%; ">
+			<tr style="background-color: ${mon.rgb}; color: white; font-size:large;">
+				<td class="1" colspan="1" style="text-align: center; width:20%; ">
 					<div>번호</div>
 				</td>
 				<td rowspan="1" style="text-align: center; width:40%;">
 					<div>이름</div>
 				</td>
-				<td rowspan="1" style="text-align: center; width:20%;">
+				<td rowspan="1" style="text-align: center; width:15%;">
 					<div>등급</div>
 				</td>
-				<td rowspan="1" style="text-align: center; width:30%; ">
+				<td rowspan="1" style="text-align: center; width:25%; ">
 					<div>
 						<span style="color: white">타입</span>
 					</div>
 				</td>
 			</tr>
-			<tr>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.dNum}</td>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pName}</td>
-				<td style="text-align: center; border-right: 1px solid #dc3165;">${mon.pGrade}</td>
-				<td style="text-align: center;">
-					<div id="typefont" style= "font-size: large">
-					<div id="type"
-					style= "background-color: 
+			
+			<tr style="height: 30px; font-size:large;">
+				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.dNum}</td>
+				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pName}</td>
+				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pGrade}</td>
+				<td style="text-align: center; height: 40px;">
+					<div id ="type" style="margin:2px; background-color: 
 			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 3}">${mon.rgb};</c:if>
@@ -420,10 +418,34 @@ div>h2 {
 			<c:if test="${mon.type_num == 16}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 17}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 18}">${mon.rgb};</c:if>
-			"
-					>${mon.type_name}
+			">
+					${mon.type_name}
+			</div>
+			<c:if test="${mon.subType_num != null}">
+			<div id= "type" style=" margin:2px; background-color: 
+			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 4}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 5}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 6}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 7}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 8}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 9}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 10}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 11}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 12}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 13}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 14}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 15}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 16}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 17}">${mon.subRgb};</c:if>
+			<c:if test="${mon.subType_num == 18}">${mon.subRgb};</c:if>
+			">
+					${mon.subType_name}
 					</div>
-					</div>
+			</c:if>
+			
 				</td>
 			</tr>
 			</tbody>
