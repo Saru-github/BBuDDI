@@ -29,6 +29,13 @@
         WHERE uid=#{uid}
     </select>
     
+    <select id="getRanking"
+    	resultType="com.buddi.vo.BuddiUserVO">
+    	SELECT * 
+    	FROM user
+    	ORDER BY mBall DESC;
+    </select>
+    
     
     <update id="addPoUser"
     	parameterType="Integer">
@@ -152,7 +159,6 @@
     	DELETE FROM users WHERE uid=#{uid}
     </delete> -->
     <!-- 게시판 관련 -->
-    ㄹㄷ3ㅇㄴ3 ㅀ쇼ㅕㅏㅑㅓㅂ	ㅈㄷㅇㅁㄴㅇㅌㄱㄹㅊㅎ포ㅠㅓㅜㅏ
     <insert id="addBoard" 
        parameterType="com.buddi.vo.BuddiBoardVO"
        useGeneratedKeys="true" keyProperty="num">

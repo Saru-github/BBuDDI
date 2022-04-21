@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ChatController {
 	@GetMapping("/chat")
 	public String chat(HttpSession session) {
-		session.setAttribute("uid", "Smith");
+		session.setAttribute("uid", "Admin");
 		return "ws/chat";
 	}
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,7 +14,6 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,6 +49,8 @@ public class BuddiController {
 		model.addAttribute("mon", svc.getTodayMon());
 		}
 		model.addAttribute("list", svc.boardList());
+		model.addAttribute("ran", svc.getRanking());
+		model.addAttribute("random", svc.getRanking2());
 		return "login/main";
 	}
  

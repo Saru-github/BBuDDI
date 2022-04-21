@@ -38,6 +38,19 @@ public class BuddiService {
 	public List<BuddiUserVO> getList() {
 		return dao.getUserList();
 	}
+	
+	public BuddiUserVO getRanking(){
+		BuddiUserVO vo = dao.getRanking().get(0);
+		
+		return vo;
+	}
+	
+	public List<BuddiUserVO> getRanking2(){
+		List<BuddiUserVO> list = dao.getRanking();
+		list.remove(0);
+		
+		return list;
+	}
 
 	public boolean add(BuddiUserVO vo) {
 		return dao.addUser(vo);
@@ -62,6 +75,8 @@ public class BuddiService {
 	public BuddiMonVO getTodayMon() {
 		List<BuddiMonVO> list = dao.getTodayMon();
 		BuddiMonVO vo = new BuddiMonVO();
+		vo = list.get(0);
+		
 		if (list.size()==2) {
 			vo =list.get(0);
 			vo.setSubType_num(list.get(1).getType_num());

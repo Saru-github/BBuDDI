@@ -43,6 +43,10 @@ public class BuddiDAO
 		return pageInfo;
 	}
 	
+	public List<BuddiUserVO>getRanking(){
+		return buddiMapper.getRanking();
+	}
+	
 	public List<Map<String,String>> getUserMap(){
 		return buddiMapper.getUserMap();
 	}

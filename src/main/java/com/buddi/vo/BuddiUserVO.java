@@ -26,7 +26,7 @@ public class BuddiUserVO {
 
 	@Override
 	public String toString() {
-		return String.format("%d %s %s %s", uNum, uid, pwd, uGrade);
+		return String.format("%s %s %d %s %d",  uid, pwd, uNum, uGrade, mBall);
 	}
 
 	public String getUid() {

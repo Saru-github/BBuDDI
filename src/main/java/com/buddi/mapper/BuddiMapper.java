@@ -66,6 +66,8 @@ public interface BuddiMapper {
 	
 	List<BuddiMonVO> getOwnMon(Map<String, Object> map);
 	
+	List<BuddiUserVO> getRanking ();
+	
 //	List<Map<String, Object>> getPaging (Map<String, Object> map);
 	
 	
