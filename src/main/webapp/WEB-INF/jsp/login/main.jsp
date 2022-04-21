@@ -214,6 +214,7 @@ input{
 	grid-area: e;
 	font-size: xx-large;
 	text-align: center;
+	border-top: 3px solid black;
 }
 
 .f {
