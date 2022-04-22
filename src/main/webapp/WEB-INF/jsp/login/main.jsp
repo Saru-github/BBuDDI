@@ -219,7 +219,7 @@ input{
 
 .f {
 	grid-area: f;
-	border: 1px solid black;
+	border: 1px solid black; 
 	text-align: center;
 	
 }
