@@ -88,7 +88,27 @@ html, body{
 	color:red; background-color:#4d4d4d;
 }
 
-.a {
+.a{
+	grid-area: a;
+	border: 1px solid black;
+	width: 99.5%;
+}
+
+#info{
+font-size: 20px;
+
+}
+
+#ran{
+	float: left;
+	margin-left:25px;
+}
+
+#random{
+	float: left;
+	margin-left:25px;
+}
+.b {
 	grid-area: b;
 	text-align: center;
 	display: flex;
@@ -133,30 +153,10 @@ a:hover{
     text-decoration: underline;
 }
 
-.a>div>h2 {
+.b>div>h2 {
 	margin-bottom: 20px;
 }
 
-.b{
-	grid-area: a;
-	border: 1px solid black;
-	width: 99.5%;
-}
-
-#info{
-font-size: 16.5px;
-
-}
-
-#ran{
-	float: left;
-	margin-left:25px;
-}
-
-#random{
-	float: left;
-	margin-left:25px;
-}
 
 .main {
 	width : 100%;
@@ -340,6 +340,50 @@ function send() {
 			</div>
 		</div>
 		<div class="a">
+			<div id ="1st" style="text-align:center; margin-top:10px;">
+			<h2>*포켓몬 몬스터볼 랭킹*</h2>
+			<img id="prize" src="../upload/1st.jpg" width="100px" height="100px" style="float:left; margin-top:30px"><br>
+			<img id="ran" src="../upload/${ran.uid}.jpg" width="100px" height="120px">
+			<div id ="info" style="font-size: 20px;" >
+			<br>
+			<br>
+				ID: ${ran.uid}<br>
+				<img id="ranball" src="../upload/ball.jpg" width="50px" height="50px" style="float:left; margin-left:30px;">
+				<div style="margin-top:10px;"> ${ran.mBall}개
+				</div>
+				<br>
+				<hr>
+				<br>
+			</div>
+			</div>
+			<div id="23man" style=" text-align:center; font-weight: bold; float: left; margin-top:10px; margin-left: 10px;" >
+			<div>
+			<img id="prize" src="../upload/2nd.jpg" width="70px" height="70px"><br>
+			</div>
+			<br><br>
+			<img id="prize" src="../upload/3rd.jpg" width="70px" height="70px"><br>
+			
+			</div>
+			<div id="23th" style=" text-align:center;">
+			<c:forEach var="b" begin="0" end="1" items="${random}">
+			<div>
+			<img id="random" src="../upload/${b.uid}.jpg" width="80px" height="100px" style="margin-top:5px;">
+			<div id ="info">
+				<br>
+				ID: ${b.uid}<br>
+				<img id="ranball" src="../upload/ball.jpg" width="40px" height="40px" style="float:left; margin-left:50px;" > ${b.mBall}개
+				<Br>
+				<Br>
+				<Br>
+			</div>
+			</div>
+		</c:forEach>
+			</div>
+			</div>
+			<br>
+			
+		
+		<div class="b">
 			<div class="allbbs">
 				<h1>게시판</h1>
 				<br>
@@ -372,50 +416,52 @@ function send() {
 		</table>
 	</div>
 	</div>
-		<div class="b">
-			<div id ="1st" style="text-align:center; margin-top:30px;">
-			<h2>*포켓몬 몬스터볼 랭킹*</h2>
-			<h2>1st</h2>
-			<img id="ran" src="../upload/${ran.uid}.jpg" width="100px" height="120px">
-			<div id ="info">
-			<br>
-			<br>
-				아이디: ${ran.uid}<br>
-				갯수 : ${ran.mBall}
-				<br>
-				<br>
-				<br>
-				<hr>
-			</div>
-			</div>
-			<div id="23man" style=" text-align:center; font-weight: bold; float: left; margin-top:40px; margin-left: 10px;" >
-			<label style="text-align:center;" >2nd</label><br>
-			<br><br><br><br>
-			<label>3rd</label><br>
-			
-			</div>
-			<div id="23th" style=" text-align:center;">
-			<c:forEach var="b" begin="0" end="1" items="${random}">
-			<div>
-			<img id="random" src="../upload/${b.uid}.jpg" width="80px" height="100px" style="margin-top:5px;">
-			<div id ="info">
-				<br>
-				아이디: ${b.uid}<br>
-				갯수 : ${b.mBall}
-				<Br>
-				<Br>
-				<Br>
-				<Br>
-			</div>
-			</div>
-		</c:forEach>
-			</div>
-			</div>
-			<br>
-			
 		
 		
-		<div class="f">
+
+		<div class="c">
+			<h1 class="logo" style="margin-right:10px;">로그인</h1>
+			<form id="loginForm" onsubmit="return login();">
+				<input type="text" id="uid" name="uid" value="대영"> <br> <input type="password" id="pwd" name="pwd" value="0"> <br>
+				<div id="button">
+					<button type="submit" style="width:60px; font-size:15px;">로그인</button>
+					<button type="reset" style="width:55px; font-size:15px;">취소</button>
+					<button type="button" onclick="location.href='/buddi/join'" style="width:65px; font-size:15px;">회원가입</button>
+				</div>
+			</form>
+		</div>
+		<div class="main"></div>
+		<div class="d">
+			<div id="container2" class="container2">
+			<h1>채팅</h1>
+		<div id="chating" class="chating">
+		</div>
+		
+		<div id="yourName">
+			<table class="inputTable">
+				<tr>
+					<th>사용자명</th>
+					<th><input  onkeyup="enterkey();" type="text" id="userName" placeholder="닉네임 설정"></th>
+					<th><button onclick="chatName()" id="startBtn">이름 등록</button></th>
+				</tr>
+			</table>
+		</div>
+		<div id="yourMsg">
+			<table class="inputTable">
+				<tr>
+					<th>메시지</th>
+					<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
+					<th><button onclick="send()" id="sendBtn">보내기</button></th>
+				</tr>
+			</table>
+		</div>
+	</div>
+	</div>
+	<div class="e">
+	e
+	</div>
+	
+	<div class="f">
 			<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
 			<h3 style="margin-top:10px; margin-bottom:30px;">No. ${mon.dNum}</h3>
 			<div id="mon" style="margin-bottom:30px;">
@@ -500,50 +546,11 @@ function send() {
 		</table>
 	</div>
 	
-			
 			<br> [<a id="gacha" href="/buddi/gacha">자세히보기</a>]
 		</div>
-
-		<div class="c">
-			<h1 class="logo" style="margin-right:20px;">로그인</h1>
-			<form id="loginForm" onsubmit="return login();">
-				<input type="text" id="uid" name="uid" value="Admin"> <br> <input type="password" id="pwd" name="pwd" value="0"> <br>
-				<div id="button">
-					<button type="submit">로그인</button>
-					<button type="reset">취 소</button>
-				</div>
-			</form>
-		</div>
-		<div class="main"></div>
-		<div class="d">
-			<div id="container2" class="container2">
-			<h1>채팅</h1>
-		<div id="chating" class="chating">
-		</div>
-		
-		<div id="yourName">
-			<table class="inputTable">
-				<tr>
-					<th>사용자명</th>
-					<th><input  onkeyup="enterkey();" type="text" id="userName" placeholder="닉네임 설정"></th>
-					<th><button onclick="chatName()" id="startBtn">이름 등록</button></th>
-				</tr>
-			</table>
-		</div>
-		<div id="yourMsg">
-			<table class="inputTable">
-				<tr>
-					<th>메시지</th>
-					<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
-					<th><button onclick="send()" id="sendBtn">보내기</button></th>
-				</tr>
-			</table>
-		</div>
-	</div>
-	</div>
-	<div class="e">
-	e
-	</div>
+	
+	
+	
 	<div class="g">
 	g
 	</div>

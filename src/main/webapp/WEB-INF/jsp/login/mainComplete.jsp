@@ -1,23 +1,234 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=divice-width, initial-scale=1.0">
 <title>로그인</title>
-
 <style>
-
 * {
 	margin: 0;
 	padding: 0;
 }
+html, body{
+	height:100%;
+}
 
+
+.container {
+	whidth: 100%;
+	height: 100%;
+	margin: 0 auto;
+	display: grid;
+	align-content: space-around;
+	justify-content: space-around;
+	justify-items: stretch;
+	grid-template-areas: "header header header header" 
+						 "  a   	b   main  	 c	 "
+						 "	a	 	b	main	 c	 "
+						 "  d	 	e	main 	 f	 "
+						 "	d   	e   main   	 f 	 "
+						"footer footer footer footer"; 
+	grid-template-columns: 18% 18% 50% 14%;
+	grid-template-rows: 9% 20% 21% 20% 21% 9%;
+
+	justify-content: space-around;
+	justify-items: stretch;
+	overflow: 
+}
+
+
+.header {
+
+	grid-area: header;
+	width: 100%;
+	font-size: xx-large;
+	text-align: center;
+}
+
+
+#topMenu {
+	grid-area: header;
+	width: 100%;
+	font-size: xx-large;
+	text-align: center;
+	height: 100%;
+	
+}
+
+#topMenu ul{
+	
+	height: 100%;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+#topMenu ul li { 
+	list-style:none;  color:white; 
+	background-color:#2d2d2d; 
+	float:left; 
+	vertical-align:middle; 
+	text-align:center; 
+	width:20%;
+	margin-top:53.2px;
+	line-height: 53px;
+	}
+	
+	
+#topMenu .menuLink { 
+	text-decoration:none; color:white;
+	display:block;
+	font-size:20px; 
+	font-weight:bold; font-family:"Trebuchet MS", Dotum, Arial;
+}
+
+#topMenu .menuLink:hover { 
+	color:red; background-color:#4d4d4d;
+}
+
+.a{
+	grid-area: a;
+	border: 1px solid black;
+	width: 99.5%;
+}
+
+#info{
+font-size: 20px;
+
+}
+
+#ran{
+	float: left;
+	margin-left:25px;
+}
+
+#random{
+	float: left;
+	margin-left:25px;
+}
+.b {
+	grid-area: b;
+	text-align: center;
+	display: flex;
+ 	justify-content: center;
+  	align-items: center;
+}
+
+table{
+    width: 99%;
+    border-collapse: collapse;
+    line-height: 24px;
+    
+}
+#bbs {
+	width: 99%;
+    border:1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+th {
+	background: rgb(221, 221, 221);
+	
+}
+
+#all{
+	margin-bottom:10px;
+	margin-right: 10px;
+}	
+
+
+.allbbs {
+	margin-top: 0px;
+	width: 100%;
+	
+ }
+ 
+a{
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.b>div>h2 {
+	margin-bottom: 20px;
+}
+
+
+.main {
+	width : 100%;
+	grid-area: main;
+	border: 1px solid black;
+	font-size: xx-large;
+	background-image: url(../upload/main.jpg);
+	background-size: cover;
+	
+}
+
+.c {
+	
+	grid-area: c;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 20px;
+}
+
+.c>h1{
+margin-top:30px;
+}
+
+.d {
+	grid-area: d;
+	border: 1px solid black;
+	text-align: center;
+	display: flex;
+ 	justify-content: center;
+  	align-items: center;
+}
+
+.container2{
+		width: 100%;
+		margin: 0 auto;
+	}
+.container2 h1{
+		text-align: center;
+		color: #000;
+	}
+.chating{
+		background-color: #000;
+		width: 100%;
+		height: 400px;
+	}
+.chating p{
+		color: #fff;
+		text-align: left;
+	}
+input{
+		width: 100%;
+ 		height: 25px;
+	}
+#yourMsg{
+		display: none;
+	}
+
+.e{
+	grid-area: e;
+	font-size: xx-large;
+	text-align: center;
+	border-top: 3px solid black;
+}
+
+.f {
+	grid-area: f;
+	border: 1px solid black; 
+	text-align: center;
+	
+}
 
 #type {
-	background-color: red;
-	margin: 1px;
 	border-radius: 5px;
 	display: inline-block;
 	width: 45px;
@@ -26,361 +237,267 @@
 }
 
 
-wrap {
-    width: 1000px;
-	margin:auto;
-}
-table{
-    width: 100%;
-    border-collapse: collapse;
-    line-height: 24px;
-}
-#bbs {
-    border-top:1px solid black;
-    border-bottom:1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-    padding: 10px;
-}
-th {
-	background: rgb(221, 221, 221);
-}
-a{
-    text-decoration: none;
-    color: blue;
-}
-a:hover{
-    text-decoration: underline;
-}
-
-
-
-.container {
-	whidth: 100%;
-	margin: 0 auto;
-	display: grid;
-	align-content: space-around;
-	justify-content: space-around;
-	justify-items: stretch; 
-	grid-template-areas: "header header header" 
-						 "   a    main    b   "
-						 "   c    main    d   " 
-						 "footer footer footer";
-	grid-template-columns: 400px 1000px auto;
-	grid-template-rows: repeat(3, minmax(50px, auto));
-	overflow: hidden;
-	justify-content: space-around;
-	justify-items: stretch;
-	grid
-}
-
-.allbbs{
-	text-align: right;
-	font-size:large;
-}
-
-.header {
-	grid-area: header;
-	width: 100%;
-	border: 3px solid black;
+.g{
+	grid-area: g;
 	font-size: xx-large;
-	text-align: center;
-	height: 50px;
-	border: 3px solid black;
-}
-
-#topMenu {
-	display:inline-block;
-	width: 100%;
-	text-align: center;
-}
-
-#topMenu ul{
-display:inline-block;
-	width: 100%;
-	text-align: center;
-}
-
-#topMenu ul li { 
-	list-style:none;  color:white; 
-	background-color:#2d2d2d; 
-	float:left; 
-	line-height:50px; 
-	vertical-align:middle; 
-	text-align:center; 
-	}
-	
-.din {
-	margin-top : 20px;
-}
-
-div > h2{
-	margin-bottom: 20px;
-}
-
-#ball {
 	text-align: center;
 }
 
 .footer {
 	grid-area: footer;
-	border: 3px solid black;
-	font-size: xx-large;
-	text-align: center;
-	height: 100px;
-	width: 100%;
-}
-
-#topMenu .menuLink { 
-	text-decoration:none; color:white;
-	display:block;
-	width:300px; font-size:20px; 
-	font-weight:bold; font-family:"Trebuchet MS", Dotum, Arial;
-	
-}
-
-#topMenu .menuLink:hover { 
-	color:red; background-color:#4d4d4d;
-}
-
-
-.a {
-	grid-area: a;
-	border: 3px solid black;
-	text-align: center;
-	height: 500px;
-}
-.gacha{
 	border: 1px solid black;
-	font-size: large;
-	text-align: right;
-}
-
-#wrap {
-    width: 1000px;
-	margin:auto;
-}
-table{
-    width: 100%;
-    border-collapse: collapse;
-    line-height: 24px;
-}
-#bbs {
-    border-top:1px solid black;
-    border-bottom:1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-    padding: 10px;
-}
-th {
-	background: rgb(221, 221, 221);
-}
-a{
-    text-decoration: none;
-    color: blue;
-}
-a:hover{
-    text-decoration: underline;
-}
-
-
-
-.b {
-	right: auto;
-	grid-area: b;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid lightgrey;
-	border-radius: 5px;
-	border: 3px solid black;
-	width: 400px;
-	height : 500px;
-}
-
-#detail {
-	font-size: x-large;
-	font-weight: bold;
-	width: fit-content;
-	margin: 0 auto;
-}
-
-#logo {
-	text-align: center;
-	margin-bottom: 80px;
-}
-
-.logout {
-	width: fit-content;
-	text-align: left;
-	margin: 0 auto;
-}
-
-.main {
-	height: 900px;
-	grid-area: main;
-	border: 3px solid black;
 	font-size: xx-large;
-	background-image: url(../upload/main.png);
-	background-size: cover;
-}
-
-
-.c {
-	grid-area: c;
-	height: 400px;
-	border: 3px solid black;
-	
-}
-.d {
-	grid-area: d;
-	border: 3px solid black;
 	text-align: center;
-	height: 400px;
-	width: 400px;
-}
-
-.button {
-	display: inline-block;
-	float: right;
-}
-
-.logo {
-	text-align: center;
-	margin-top: 0px;
-	margin-bottom: 20px;
-}
-
-#login {
 	width: 100%;
-	background-color: skyblue;
-	border-color: transparent;
-	color: white;
 }
 
-.account {
-	display: block;
-	margin-bottom: 3px;
-	padding: 3px;
-	border: 1px solid lightgray;
-	border-radius: 3px;
-	width: 80%;
-}
 
-#alert {
-	border-color: transparent;
-}
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-	var g_webSocket = null;
-	window.onload = function() {
-		//host = "152.70.92.222";   /* 배포시에 호스트 주소로 변경 */
-		host = "localhost";
-		g_webSocket = new WebSocket("ws://" + host + "/websocket");
+var ws;
 
-		/* 웹소켓 접속 성공시 실행 */
-		g_webSocket.onopen = function(message) {
-			addLineToChatBox("Server is connected.");
-		};
-
-		/* 웹소켓 서버로부터 메시지 수신시 실행 */
-		g_webSocket.onmessage = function(message) {
-			addLineToChatBox(message.data);
-		};
-
-		/* 웹소켓 이용자가 연결을 해제하는 경우 실행 */
-		g_webSocket.onclose = function(message) {
-			addLineToChatBox("Server is disconnected.");
-		};
-
-		/* 웹소켓 에러 발생시 실행 */
-		g_webSocket.onerror = function(message) {
-			addLineToChatBox("Error!");
-		};
+function wsOpen(){
+	ws = new WebSocket("ws://" + location.host + "/chating");
+	wsEvt();
+}
+	
+function wsEvt() {
+	ws.onopen = function(data){
+		//소켓이 열리면 초기화 세팅하기
 	}
-
-	/* 채팅 메시지를 화면에 표시 */
-	function addLineToChatBox(_line) {
-		if (_line == null) {
-			_line = "";
-		}
-
-		var chatBoxArea = document.getElementById("chatBoxArea");
-		chatBoxArea.value += _line + "\n";
-		chatBoxArea.scrollTop = chatBoxArea.scrollHeight;
-	}
-
-	/* Send 버튼 클릭하면 서버로 메시지 전송 */
-	function sendButton_onclick() {
-		var inputMsgBox = document.getElementById("inputMsgBox");
-		// $('inputMsgBox').val(); 
-
-		if (inputMsgBox == null || inputMsgBox.value == null
-				|| inputMsgBox.value.length == 0) {
-			return false;
-		}
-
-		var chatBoxArea = document.getElementById("chatBoxArea");
-
-		if (g_webSocket == null || g_webSocket.readyState == 3) {
-			chatBoxArea.value += "Server is disconnected.\n";
-			return false;
-		}
-
-		// 서버로 메시지 전송
-		g_webSocket.send(inputMsgBox.value);
-		inputMsgBox.value = "";
-		inputMsgBox.focus();
-
-		return true;
-	}
-
-	/* Disconnect 버튼 클릭하는 경우 호출 */
-	function disconnectButton_onclick() {
-		if (g_webSocket != null) {
-			g_webSocket.close();
+	
+	ws.onmessage = function(data) {
+		var msg = data.data;
+		if(msg != null && msg.trim() != ''){
+			$("#chating").append("<p>" + msg + "</p>");
 		}
 	}
 
-	/* inputMsgBox 키 입력하는 경우 호출 */
-	function inputMsgBox_onkeypress() {
-		if (event == null) {
-			return false;
+	document.addEventListener("keypress", function(e){
+		if(e.keyCode == 13){ //enter press
+			send();
 		}
+	});
+		
+}
 
-		// 엔터키 누를 경우 서버로 메시지 전송
-		var keyCode = event.keyCode || event.which;
-		if (keyCode == 13) {
-			sendButton_onclick();
-		}
+function enterkey() {
+    if (window.event.keyCode == 13) {
+
+    	chatName()
+    }
+}
+
+function chatName(){
+	var userName = $("#userName").val();
+	if(userName == null || userName.trim() == ""){
+		alert("사용자 이름을 입력해주세요.");
+		$("#userName").focus();
+		
+	}else{
+		wsOpen();
+		$("#yourName").hide();
+		$("#yourMsg").show();
+	}
+}
+
+function send() {
+	var uN = $("#userName").val();
+	var msg = $("#chatting").val();
+	ws.send(uN+" : "+msg);
+	$('#chatting').val("");
+}
+
+	function login() {
+		var serData = $('#loginForm').serialize();
+		$.ajax({
+			url : '/buddi/login',
+			method : 'post',
+			cache : false,
+			data : serData,
+			dataType : 'json',
+			success : function(res) {
+				alert(res.ok ? '로그인 성공' : '로그인 실패');
+				if (res.ok)
+					location.href = "/buddi/mainc";
+			},
+			error : function(xhr, status, err) {
+				alert('에러:' + err);
+			}
+		});
+		return false;
 	}
 </script>
 </head>
 <body>
 	<div class="container">
 		<div class = "header">
-		<nav id="topMenu">
-			<ul>
-				<li><a class="menuLink" href="/buddi/join">회원가입</a></li>
-				<li><a class="menuLink" href="/buddi/bbs/list">거래게시판</a></li>
-				<li><a class="menuLink" href="/buddi/chat">거래채팅</a></li>
-				<li><a class="menuLink" href="/buddi/gacha">포켓몬뽑기</a></li>
-				<li><a class="menuLink" href="#">포켓몬자랑</a></li>
-				<li><a class="menuLink" href="/buddi/detail">회원정보수정</a></li>
-			</ul>
-
-		</nav>
+			<div id="topMenu">
+				<ul>
+					<li><a class="menuLink" href="buddi/join">회원가입</a></li>
+					<li><a class="menuLink" href="buddi/bbs/list">거래게시판</a></li>
+					<li><a class="menuLink" href="buddi/chat">거래채팅</a></li>
+					<li><a class="menuLink" href="buddi/gacha">포켓몬뽑기</a></li>
+					<li><a class="menuLink" href="buddi/detail">회원정보수정</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="a">
+			<div id ="1st" style="text-align:center; margin-top:10px;">
+			<h2>*포켓몬 몬스터볼 랭킹*</h2>
+			<img id="prize" src="../upload/1st.jpg" width="100px" height="100px" style="float:left; margin-top:30px"><br>
+			<img id="ran" src="../upload/${ran.uid}.jpg" width="100px" height="120px">
+			<div id ="info" style="font-size: 20px;" >
+			<br>
+			<br>
+				ID: ${ran.uid}<br>
+				<img id="ranball" src="../upload/ball.jpg" width="50px" height="50px" style="float:left; margin-left:30px;">
+				<div style="margin-top:10px;"> ${ran.mBall}개
+				</div>
+				<br>
+				<hr>
+			</div>
+			</div>
+			<div id="23man" style=" text-align:center; font-weight: bold; float: left; margin-top:30px; margin-left: 10px;" >
+			<div>
+			<img id="prize" src="../upload/2nd.jpg" width="70px" height="70px"><br>
+			</div>
+			<br><br>
+			<img id="prize" src="../upload/3rd.jpg" width="70px" height="70px"><br>
+			
+			</div>
+			<div id="23th" style=" text-align:center; margin-top:10px;">
+			<c:forEach var="b" begin="0" end="1" items="${random}">
+			<div>
+			<img id="random" src="../upload/${b.uid}.jpg" width="80px" height="100px" style="margin-top:5px;">
+			<div id ="info">
+				<br>
+				ID: ${b.uid}<br>
+				<img id="ranball" src="../upload/ball.jpg" width="40px" height="40px" style="float:left; margin-left:50px;" >
+				<div style="text-align: left; margin-top: 5px;">
+				&nbsp;&nbsp; ${b.mBall}개
+				</div>
+				<Br>
+				<Br>
+			</div>
+			</div>
+		</c:forEach>
+			</div>
+			</div>
+			<br>
+			
+		
+		<div class="b">
+			<div class="allbbs">
+				<h1>게시판</h1>
+				<br>
+				<br>
+				
+		<table style="width:100%;">
+			<tr>
+				<td colspan="5" style="border: white;text-align: right;">
+					<div id = "all" style=" margin-right:20px; ">
+					<a href="/buddi/bbs/list">전체보기</a>
+					<br>
+					<br>
+					</div>
+				</td>
+			</tr>
+			<tr id="bbs">
+				<th>글번호</th>
+				<th>글제목</th>
+				<th>작성자</th>
+			</tr>
+			<c:forEach var="b" begin="0" end="10" items="${list }">
+				<tr id="bbs">
+					<td>${b.num}</td>
+					<td>
+						<a href="/buddi/bbs/detail?num=${b.num}">${b.title}</a>
+					</td>
+					<td>${b.author}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+	</div>
+		
+		
+
+		<div class="c">
+         <h1 id="logo">회원정보</h1>
+         <br>
+         <br>
+
+         <div id=detail>
+            <div>
+               <label>유저번호: </label> ${user.uNum}
+            </div>
+            <div>
+               <label>아이디: </label> ${user.uid}
+            </div>
+            <div>
+               <label>유저등급: </label> ${user.uGrade}
+            </div>
+            <div id="ball">
+               <img src="../upload/ball.jpg" width="50" height="50" style=" margin-left:100px; float:left;">
+             </div>  
+              
+             <div style="margin-top:10px;  text-align: left;">
+            &nbsp;&nbsp;&nbsp;X${user.mBall}
+            </div>
+         </div>
+         <br>
+         <br>
+         <br>
+
+         <div class="logout">
+            [<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]<Br>
+            [<a href="/buddi/detail?page=1">상세회원정보</a>]
+         </div>
+
+      </div>
+		<div class="main"></div>
+		<div class="d">
+			<div id="container2" class="container2">
+			<h1>채팅</h1>
+		<div id="chating" class="chating">
+		</div>
+		
+		<div id="yourName">
+			<table class="inputTable">
+				<tr>
+					<th>사용자명</th>
+					<th><input  onkeyup="enterkey();" type="text" id="userName" placeholder="닉네임 설정"></th>
+					<th><button onclick="chatName()" id="startBtn">이름 등록</button></th>
+				</tr>
+			</table>
+		</div>
+		<div id="yourMsg">
+			<table class="inputTable">
+				<tr>
+					<th>메시지</th>
+					<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
+					<th><button onclick="send()" id="sendBtn">보내기</button></th>
+				</tr>
+			</table>
+		</div>
+	</div>
+	</div>
+	<div class="e">
+	e
+	</div>
+	
+	<div class="f">
 			<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
 			<h3 style="margin-top:10px; margin-bottom:30px;">No. ${mon.dNum}</h3>
 			<div id="mon" style="margin-bottom:30px;">
 				<img src="../upload/poketmon/${mon.dNum}.gif" width="100px" height="150px">
 			</div>
-
-	<div class="7" style="width: 100%;">
-		<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid ${mon.rgb};">
-			<tr>
-			</tr>
+			<div class="7" style="width: 100%;">
+				<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid ${mon.rgb};">
+					<tr>
+					</tr>
 			<tr style="background-color: ${mon.rgb}; color: white; font-size:large;">
 				<td class="1" colspan="1" style="text-align: center; width:20%; ">
 					<div>번호</div>
@@ -426,7 +543,7 @@ a:hover{
 					${mon.type_name}
 			</div>
 			<c:if test="${mon.subType_num != null}">
-			<div id= "type" style=" margin:2px; background-color: 
+			<div id= "type2" style=" margin:2px; background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>
@@ -455,77 +572,14 @@ a:hover{
 			</tbody>
 		</table>
 	</div>
-			
-			
-			
+	
 			<br> [<a id="gacha" href="/buddi/gacha">자세히보기</a>]
 		</div>
-		<div class="b">
-			<h1 id="logo">로그인된 후 회원정보</h1>
-
-			<div id=detail>
-				<div>
-					<label>유저번호: </label> ${user.uNum}
-				</div>
-				<div>
-					<label>아이디: </label> ${user.uid}
-				</div>
-				<div>
-					<label>유저등급: </label> ${user.uGrade}
-				</div>
-				<div id="ball">
-					<img src="../upload/ball.jpg" width="50" height="50">&nbsp;&nbsp;&nbsp;X${user.mBall}
-				</div>
-			</div>
-
-			<div class="logout">
-				[<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]<Br>
-				[<a href="/buddi/detail?page=1">상세회원정보</a>]
-			</div>
-
-		</div>
-
-		<div class="main"></div>
-		<div class="c">
-			<h1 class="logo">채팅프로그램</h1>
-			<input id="inputMsgBox" style="width: 200px;" type="text" onkeypress="inputMsgBox_onkeypress()">
-			<div class="button">
-				<input id="sendButton" value="Send" type="button" onclick="sendButton_onclick()"> <input id="disconnectButton" value="Disconnect" type="button" onclick="disconnectButton_onclick()"> <br />
-			</div>
-			<textarea id="chatBoxArea" rows="10" cols="55" readonly="readonly"></textarea>
-		</div>
-		<div class="d">
-			<div class="din">
-				<h2>게시판</h2>
-				<div class="allbbs">
-				<div id="bbswrap">
-		<table>
-			<tr>
-				<td colspan="5" style="border: white; text-align: right;">
-					<div id= "all">
-					<a href="/buddi/bbs/list">전체보기</a>
-					</div>
-				</td>
-			</tr>
-			<tr id="bbs">
-				<th>글번호</th>
-				<th>글제목</th>
-				<th>작성자</th>
-			</tr>
-			<c:forEach var="b" begin="0" end="10" items="${list }">
-				<tr id="bbs">
-					<td>${b.num }</td>
-					<td>
-						<a href="/buddi/bbs/detail?num=${b.num}">${b.title}</a>
-					</td>
-					<td>${b.author}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
-	</div>
-	</div>
-	</div>
+	
+	
+	
+	
+	
 		<div class="footer">footer</div>
 	</div>
 </body>

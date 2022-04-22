@@ -65,7 +65,8 @@ public class BuddiController {
 			if (mon==null) {
 				model.addAttribute("mon", svc.getTodayMon());
 				}
-			
+			model.addAttribute("ran", svc.getRanking());
+			model.addAttribute("random", svc.getRanking2());
 			model.addAttribute("user", user);
 			model.addAttribute("list", svc.boardList());
 			return "login/mainComplete";
