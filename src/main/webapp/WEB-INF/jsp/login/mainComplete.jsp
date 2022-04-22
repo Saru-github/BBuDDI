@@ -218,12 +218,11 @@ input{
 	grid-area: e;
 	font-size: xx-large;
 	text-align: center;
-	border-top: 3px solid black;
+	border-top: 1px solid black;
 }
 
 .f {
 	grid-area: f;
-	border: 1px solid black; 
 	text-align: center;
 	
 }
@@ -426,8 +425,6 @@ function send() {
 
 		<div class="c">
          <h1 id="logo">회원정보</h1>
-         <br>
-         <br>
 
          <div id=detail>
             <div>
@@ -448,10 +445,13 @@ function send() {
             </div>
          </div>
          <br>
-         <br>
-         <br>
+         <h4>*대표 도감 포켓몬*</h4>
+		<c:forEach var="b" begin="0" end="5" items="${pu.list}">
+			<img src="../upload/poketmon/${b.dNum}.gif" width="70" height="70" style=" margin-left:35px; float:left;">
+			</c:forEach>
 
          <div class="logout">
+          <br> <br>  <br> <br>
             [<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]<Br>
             [<a href="/buddi/detail?page=1">상세회원정보</a>]
          </div>
@@ -494,7 +494,7 @@ function send() {
 			<div id="mon" style="margin-bottom:30px;">
 				<img src="../upload/poketmon/${mon.dNum}.gif" width="100px" height="150px">
 			</div>
-			<div class="7" style="width: 100%;">
+			<div class="7" style="width: 100%; margin-left:2px;">
 				<table class="1" style="background-color: #FFFFFF; width: 100%; border: 2px solid ${mon.rgb};">
 					<tr>
 					</tr>
@@ -543,7 +543,7 @@ function send() {
 					${mon.type_name}
 			</div>
 			<c:if test="${mon.subType_num != null}">
-			<div id= "type2" style=" margin:2px; background-color: 
+			<div id= "type" style=" margin:2px; background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>
@@ -572,8 +572,12 @@ function send() {
 			</tbody>
 		</table>
 	</div>
-	
-			<br> [<a id="gacha" href="/buddi/gacha">자세히보기</a>]
+	<br>
+			<div class = "gacha">
+			[<a id="gacha" href="/buddi/gacha">자세히보기</a>]<br>
+			[<a href = "/buddi/gogacha?strCount=11" >11회뽑기</a>]
+			[<a href = "/buddi/gogacha?strCount=1" >1회뽑기</a>]
+			</div>
 		</div>
 	
 	

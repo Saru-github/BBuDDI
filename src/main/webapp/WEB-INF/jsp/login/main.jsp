@@ -353,7 +353,6 @@ function send() {
 				</div>
 				<br>
 				<hr>
-				<br>
 			</div>
 			</div>
 			<div id="23man" style=" text-align:center; font-weight: bold; float: left; margin-top:10px; margin-left: 10px;" >
@@ -516,7 +515,7 @@ function send() {
 					${mon.type_name}
 			</div>
 			<c:if test="${mon.subType_num != null}">
-			<div id= "type2" style=" margin:2px; background-color: 
+			<div id= "type" style=" margin:2px; background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>
@@ -545,8 +544,10 @@ function send() {
 			</tbody>
 		</table>
 	</div>
-	
-			<br> [<a id="gacha" href="/buddi/gacha">자세히보기</a>]
+	<br>
+			<div class = "gacha">
+			[<a id="gacha" href="/buddi/gacha">자세히보기</a>]<br>
+			</div>
 		</div>
 	
 	

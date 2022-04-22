@@ -69,6 +69,8 @@ public class BuddiController {
 			model.addAttribute("random", svc.getRanking2());
 			model.addAttribute("user", user);
 			model.addAttribute("list", svc.boardList());
+			BuddiPagingVO pu = svc.getOwnMon(uid, 1); 
+			model.addAttribute("pu", pu);
 			return "login/mainComplete";
 		}
 
