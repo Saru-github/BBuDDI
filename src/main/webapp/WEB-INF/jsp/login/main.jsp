@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=divice-width, initial-scale=1.0">
 <title>로그인</title>
@@ -14,7 +15,6 @@
 html, body{
 	height:100%;
 }
-
 
 .container {
 	whidth: 100%;
@@ -224,12 +224,13 @@ input{
 	
 }
 
-#type {
-	border-radius: 5px;
-	display: inline-block;
-	width: 45px;
-	text-align: center;
-	color: window;
+#type{
+	margin:1px;
+	border-radius:5px;
+	width:55px;
+	text-align:center;
+	color:window;
+	margin-left: 8px;
 }
 
 
@@ -480,19 +481,22 @@ function send() {
 				<td rowspan="1" style="text-align: center; width:15%;">
 					<div>등급</div>
 				</td>
-				<td rowspan="1" style="text-align: center; width:25%; ">
+				
+				
+				
+				<td rowspan="1" style="text-align: center; width:20%; ">
 					<div>
 						<span style="color: white">타입</span>
 					</div>
 				</td>
 			</tr>
 			
-			<tr style="height: 30px; font-size:large;">
+			<tr style="height: 12px;">
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.dNum}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pName}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pGrade}</td>
 				<td style="text-align: center; height: 40px;">
-					<div id ="type" style="margin:2px; background-color: 
+					<div id ="type" style="background-color: 
 			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 3}">${mon.rgb};</c:if>
@@ -515,7 +519,7 @@ function send() {
 					${mon.type_name}
 			</div>
 			<c:if test="${mon.subType_num != null}">
-			<div id= "type" style=" margin:2px; background-color: 
+			<div id= "type" style="background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>

@@ -78,7 +78,6 @@ public class BuddiService {
 		vo = list.get(0);
 		
 		if (list.size()==2) {
-			vo =list.get(0);
 			vo.setSubType_num(list.get(1).getType_num());
 			vo.setSubType_name(list.get(1).getType_name());
 			vo.setSubRgb(list.get(1).getRgb());
