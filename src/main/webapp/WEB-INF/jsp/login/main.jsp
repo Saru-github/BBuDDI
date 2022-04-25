@@ -236,9 +236,11 @@ input{
 
 .g{
 	grid-area: g;
-	font-size: xx-large;
-	text-align: center;
+	border: 1px solid black;
 }
+
+.g > h3{
+font-size: xx-large;}
 
 .footer {
 	grid-area: footer;
@@ -325,9 +327,56 @@ function send() {
 		});
 		return false;
 	}
+	
+	var imagepath = "../upload/poketmon/"
+		NewImg = new Array (
+		"1.gif",
+		"2.gif",
+		"3.gif",
+		"4.gif",
+		"5.gif",
+		"6.gif",
+		"7.gif",
+		"8.gif",
+		"9.gif",
+		"10.gif",
+
+		);
+		var ImgNum = 0;
+		var ImgLength = NewImg.length - 1;
+
+		var delay = 5000; //자동전환시 시간설정(1000=1초)
+
+		var lock = false;
+		var run;
+
+		function chgImg(direction) {
+		    if (document.images) {
+		        ImgNum = ImgNum + direction;
+		    if (ImgNum > ImgLength) {
+		        ImgNum = 0;
+		    }
+		    if (ImgNum < 0) {
+		        ImgNum = ImgLength;
+		    }
+		    document.slideshow.src = imagepath+NewImg[ImgNum];
+		   }
+		}
+
+		function auto() {
+		    if (lock == true) {
+		        lock = false;
+		        window.clearInterval(run);
+		    }
+		    else if (lock == false) {
+		        lock = true;
+		        run = setInterval("chgImg(1)", delay);
+		   }
+		    
+}
 </script>
 </head>
-<body>
+<body onLoad=auto();>
 	<div class="container">
 		<div class = "header">
 			<div id="topMenu">
@@ -458,8 +507,19 @@ function send() {
 	</div>
 	</div>
 	<div class="e">
-	e
-	</div>
+	<h2>광 고</h2>
+	
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/d9TnW7VQRPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <div style = "margin-top:100px;">
+<img src="../upload/poketmon/1.gif" name="slideshow" width=200 height=200>
+<br>
+<br>
+<br>
+<a href="javascript:chgImg(-1)"><--</a>
+<a href="javascript:auto()">Auto/Stop</a>
+<a href="javascript:chgImg(1)">--></a>
+<!-- </div> -->
+</div>
 	
 	<div class="f">
 			<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
@@ -557,7 +617,16 @@ function send() {
 	
 	
 	<div class="g">
-	g
+	<div align="center" dir="auto">
+<strong><h1 style="margin-top:30px;" dir="auto"><g-emoji class="g-emoji" alias="email" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e7.png">📧</g-emoji>Contact Us<g-emoji class="g-emoji" alias="email" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e7.png">📧</g-emoji></h1></strong>
+</div>
+<br>
+<br>
+<div align="left" dir="auto" style="margin-left:20px ; font-weight: bold; font-size:18px;">
+Google mail: <a href="mailto:glglzhzh22@gmail.com"><img style="height: 28px; max-width: 100%; margin-left:49px;" src="https://camo.githubusercontent.com/0d18630762d7b4380b46c672bc132f4212975fa18c2647f7ddfdd585030347d0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f476d61696c2d6431343833363f7374796c653d666c61742d737175617265266c6f676f3d476d61696c266c6f676f436f6c6f723d7768697465266c696e6b3d" data-canonical-src="https://img.shields.io/badge/Gmail-d14836?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link="></a><br>
+Naver mail: <a href="mailto:heo_dark@naver.com"><img style="height: 28px; max-width: 100%; margin-left:60px;" src="https://camo.githubusercontent.com/b027982dc090ccd577af1e99d5fadceb6fb9a3e4d5e801ef04547b234dcfb722/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4e617665722d627269676874677265656e3f7374796c653d666c61742d737175617265266c6f676f3d4e61766572266c6f676f436f6c6f723d7768697465266c696e6b3d" data-canonical-src="https://img.shields.io/badge/-Naver-brightgreen?style=flat-square&amp;logo=Naver&amp;logoColor=white&amp;link="></a><br>
+KaKao talk: <a href="https://open.kakao.com/o/sHmgwxbe" rel="nofollow"><img style="height: 28px; max-width: 100%; margin-left:60px;" src="https://camo.githubusercontent.com/ad4a24465ede82cef81fa757614d1b8b98520db5d35d84d89274d7386ef4dbe7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4b616b616f54616c6b2d4637444631453f7374796c653d666c61742d737175617265266c6f676f3d4b616b616f54616c6b266c6f676f436f6c6f723d7768697465266c696e6b3d" data-canonical-src="https://img.shields.io/badge/KakaoTalk-F7DF1E?style=flat-square&amp;logo=KakaoTalk&amp;logoColor=white&amp;link="></a>
+</div>
 	</div>
 	
 	

@@ -266,6 +266,10 @@ public class BuddiController {
 
 		return absolutePath;
 	}
+	@GetMapping("/test")
+	public String test() {
+		return "login/NewFile";
+	}
 
 	/*
 	 * @GetMapping("/edit") public String edit(@RequestParam String userid, Model
