@@ -230,7 +230,7 @@ input{
 #type {
 	border-radius: 5px;
 	display: inline-block;
-	width: 45px;
+	width: 55px;
 	text-align: center;
 	color: window;
 }
@@ -327,6 +327,8 @@ function send() {
 		});
 		return false;
 	}
+	
+	
 </script>
 </head>
 <body>
@@ -485,7 +487,16 @@ function send() {
 	</div>
 	</div>
 	<div class="e">
-	e
+	<B>
+<img src="../upload/poketmon/1.gif" name="slideshow" width=200 height=200>
+<br>
+<a href="javascript:chgImg(-1)"><--</a>
+<a href="javascript:auto()">Auto/Stop</a>
+<a href="javascript:chgImg(1)">--></a>
+</div>
+</B><p>
+</p>
+</div>
 	</div>
 	
 	<div class="f">
@@ -519,7 +530,7 @@ function send() {
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.dNum}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pName}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pGrade}</td>
-				<td style="text-align: center; height: 40px;">
+				<td style="text-align: center; height: 45px;">
 					<div id ="type" style="margin:2px; background-color: 
 			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>

@@ -227,7 +227,7 @@ input{
 #type{
 	margin:1px;
 	border-radius:5px;
-	width:55px;
+	width: 55px;
 	text-align:center;
 	color:window;
 	margin-left: 8px;
@@ -557,7 +557,7 @@ function send() {
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.dNum}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pName}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pGrade}</td>
-				<td style="text-align: center; height: 40px;">
+				<td style="text-align: center; height: 45px;">
 					<div id ="type" style="background-color: 
 			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>
