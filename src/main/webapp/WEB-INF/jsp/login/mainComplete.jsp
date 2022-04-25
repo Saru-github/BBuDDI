@@ -329,9 +329,49 @@ function send() {
 	}
 	
 	
+	var imagepath = "../upload/"
+		NewImg = new Array (
+		"ad1.jpg",
+		"ad2.jpg",
+		"ad3.jpg",
+		"ad4.jpg",
+
+		);
+		var ImgNum = 0;
+		var ImgLength = NewImg.length - 1;
+
+		var delay = 3000; //자동전환시 시간설정(1000=1초)
+
+		var lock = false;
+		var run;
+
+		function chgImg(direction) {
+		    if (document.images) {
+		        ImgNum = ImgNum + direction;
+		    if (ImgNum > ImgLength) {
+		        ImgNum = 0;
+		    }
+		    if (ImgNum < 0) {
+		        ImgNum = ImgLength;
+		    }
+		    document.slideshow.src = imagepath+NewImg[ImgNum];
+		   }
+		}
+
+		function auto() {
+		    if (lock == true) {
+		        lock = false;
+		        window.clearInterval(run);
+		    }
+		    else if (lock == false) {
+		        lock = true;
+		        run = setInterval("chgImg(1)", delay);
+		   }
+		    
+}
 </script>
 </head>
-<body>
+<body onLoad=auto();>
 	<div class="container">
 		<div class = "header">
 			<div id="topMenu">
@@ -487,17 +527,18 @@ function send() {
 	</div>
 	</div>
 	<div class="e">
-	<B>
-<img src="../upload/poketmon/1.gif" name="slideshow" width=200 height=200>
+	<h3>광 고</h3>
+	
+<!-- iframe width="100%" height="350" src="https://www.youtube.com/embed/d9TnW7VQRPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<div style = "margin-top:20px;">
+<img src="../upload/ad1.jpg" name="slideshow" width=100% height=300>
 <br>
 <a href="javascript:chgImg(-1)"><--</a>
 <a href="javascript:auto()">Auto/Stop</a>
 <a href="javascript:chgImg(1)">--></a>
 </div>
-</B><p>
-</p>
 </div>
-	</div>
+	
 	
 	<div class="f">
 			<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
