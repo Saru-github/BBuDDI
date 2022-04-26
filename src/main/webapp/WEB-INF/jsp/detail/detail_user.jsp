@@ -113,7 +113,7 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 				<div>
 					<label>유저등급: </label> ${user.uGrade}
 				</div>
-				</div>
+				</div> 
 				<div id="ball">
 					<img src="../upload/ball.jpg" width="50" height="50">&nbsp;&nbsp;&nbsp;X${user.mBall}
 				</div>
