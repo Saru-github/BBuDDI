@@ -121,7 +121,7 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 			<div class="logout">
 			
 				[<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]
-			
+			      
 			<br>
 			<br>
 			</div>
