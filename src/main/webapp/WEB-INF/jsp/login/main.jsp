@@ -235,7 +235,6 @@ input{
 	margin-left: 8px;
 }
 
-
 .g{
 	grid-area: g;
 	border: 1px solid black;

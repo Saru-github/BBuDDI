@@ -62,7 +62,7 @@ a:hover{
 					<td>${b.bdate}</td>
 					<td>
 					<c:forEach var="a" items="${b.attach}">
-     	  		 	${a.num} ${a.filename} ${a.filesize}
+     	  		 	 ${a.filename} (${a.filesize}kb)
       				</c:forEach>
 					</td>
 				</tr>

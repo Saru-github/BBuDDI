@@ -377,11 +377,11 @@ function send() {
 		<div class = "header">
 			<div id="topMenu">
 				<ul>
-					<li><a class="menuLink" href="buddi/join">회원가입</a></li>
-					<li><a class="menuLink" href="buddi/bbs/list">거래게시판</a></li>
-					<li><a class="menuLink" href="buddi/chat">거래채팅</a></li>
-					<li><a class="menuLink" href="buddi/gacha">포켓몬뽑기</a></li>
-					<li><a class="menuLink" href="buddi/detail">회원정보수정</a></li>
+					<li><a class="menuLink" href="/buddi/join">회원가입</a></li>
+					<li><a class="menuLink" href="/buddi/bbs/list">거래게시판</a></li>
+					<li><a class="menuLink" href="/buddi/chat">거래채팅</a></li>
+					<li><a class="menuLink" href="/buddi/gacha">포켓몬뽑기</a></li>
+					<li><a class="menuLink" href="/buddi/detail?page=1">회원정보수정</a></li>
 				</ul>
 			</div>
 		</div>
@@ -479,7 +479,7 @@ function send() {
                <label>유저등급: </label> ${user.uGrade}
             </div>
             <div align="left">
-               <label style="float:left; margin-top:20px; margin-left:70px;">소속체육관: </label> <img src="../upload/t1.jpg" width="60" height="60" style="margin-left:10px;">
+               <label style="float:left; margin-top:20px; margin-left:70px;">소속체육관: </label> <img src="../upload/t${user.gym}.jpg" width="60" height="60" style="margin-left:10px;">
             </div>
             <div id="ball">
                <img src="../upload/ball.jpg" width="50" height="50" style=" margin-left:100px; float:left;">

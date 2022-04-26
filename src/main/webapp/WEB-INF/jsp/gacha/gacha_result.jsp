@@ -9,13 +9,17 @@
 <style>
 
 
-
-
-.container{
-	border: 1px solid black;
-
+*{
+font-size:large;
 }
 
+h1{
+
+font-size:50px;
+}
+.container{
+	border: 1px solid black;
+}
 
 #gachanum{
 	font-weight:  bold;
@@ -27,6 +31,8 @@
 	height:20px;
 	margin-left: 20px;
 	color:window;
+	padding:3px;
+	padding-bottom:5px;
 }
 
 #type{
@@ -42,6 +48,10 @@
 nav{
 	text-align: right;
 	f
+}
+
+#allbutton{
+
 }
 
 #numcon{
@@ -76,8 +86,8 @@ h2 {
 	text-align: center;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	width: 270px;
-	height: 300px;
+	width: 300px;
+	height: 350px;
 	padding: 0;
 	margin: 0.8%;
 	margin-bottom: 18px;
@@ -170,7 +180,7 @@ jQuery(document).ready(function($){
 </script>
 </head>
 <body>
-<section class="wrapper">
+<section class="wrapper" style="width :90%;">
   <h1>뽑기결과</h1> <h1 id="regacha"></h1>
   <div class ="container">
 <!-- Card Html -->
@@ -215,7 +225,7 @@ jQuery(document).ready(function($){
 								${b.dNum}</div> 
 							</div>
 							
-							<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="90">
+							<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="120">
 			</div>
 			<br> 
 			
@@ -242,12 +252,12 @@ jQuery(document).ready(function($){
 				</td>
 			</tr>
 			
-			<tr style="height: 12px;">
+			<tr style="height: 15px;">
 				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.dNum}</td>
 				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.pName}</td>
 				<td style="text-align: center; border-right: 1px solid ${b.rgb};">${b.pGrade}</td>
 				<td style="text-align: center; height: 40px;">
-					<div id ="type" style="background-color: 
+					<div id ="type" style=" margin:1px; background-color: 
 			<c:if test="${b.type_num == 1}">${b.rgb};</c:if>
 			<c:if test="${b.type_num == 2}">${b.rgb};</c:if>
 			<c:if test="${b.type_num == 3}">${b.rgb};</c:if>
@@ -270,7 +280,7 @@ jQuery(document).ready(function($){
 					${b.type_name}
 			</div>
 			<c:if test="${b.subType_num != null}">
-			<div id= "type" style="background-color: 
+			<div id= "type" style="margin-top:2px; background-color: 
 			<c:if test="${b.subType_num == 1}">${b.subRgb};</c:if>
 			<c:if test="${b.subType_num == 2}">${b.subRgb};</c:if>
 			<c:if test="${b.subType_num == 3}">${b.subRgb};</c:if>
@@ -308,18 +318,22 @@ jQuery(document).ready(function($){
     
     
   </c:forEach>
+  <div style="float:right; margin-right:170px; margin-top: 50px; font-size:x-large;">
+  <button style="height:100px; width:200px; font-size:30px; font-weight:bold;" type="button" id="allButton">한번에 뽑기
   
-  <button type="button" id="allButton">돌려돌려</button>
-        </section> 
-  <nav>
-  <img src="../upload/ball.jpg" width="50" height="50">&nbsp;&nbsp;&nbsp;X${user.mBall}
+  </button><br>
+<br>
+  <img src="../upload/ball.jpg" width="70" height="70" style ="float:left;">
+  <br>
+  &nbsp;&nbsp;&nbsp;X${user.mBall}
+  <br>
+  <br>
   <a href = "/buddi/gogacha?strCount=11" >10+1회뽑기</a><br>
   <a href = "/buddi/gogacha?strCount=1" >1회뽑기</a><br>
   <a href = "/buddi/mainc" >메인으로</a>
-  </nav>
   </div>
+        </section> 
   
-</section>
 
 </body>
 </html>

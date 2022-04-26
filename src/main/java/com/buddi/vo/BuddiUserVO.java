@@ -12,6 +12,7 @@ public class BuddiUserVO {
 	private int uNum;
 	private String uGrade;
 	private int mBall;
+	private int gym;
 
 	@Override
 	public int hashCode() {
@@ -26,7 +27,7 @@ public class BuddiUserVO {
 
 	@Override
 	public String toString() {
-		return String.format("%s %s %d %s %d",  uid, pwd, uNum, uGrade, mBall);
+		return String.format("%s %s %d %s %d %d",  uid, pwd, uNum, uGrade, mBall, gym);
 	}
 
 	public String getUid() {
@@ -68,5 +69,15 @@ public class BuddiUserVO {
 	public void setmBall(int mBall) {
 		this.mBall = mBall;
 	}
+
+	public int getGym() {
+		return gym;
+	}
+
+	public void setGym(int gym) {
+		this.gym = gym;
+	}
+	
+	
 
 }
