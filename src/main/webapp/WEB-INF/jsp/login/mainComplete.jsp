@@ -228,11 +228,12 @@ input{
 }
 
 #type {
-	border-radius: 5px;
-	display: inline-block;
-	width: 55px;
-	text-align: center;
-	color: window;
+	margin:1px;
+	border-radius:5px;
+	width:55px;
+	text-align:center;
+	color:window;
+	margin-left: 15px;
 }
 
 
@@ -574,7 +575,7 @@ function send() {
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pName}</td>
 				<td style="text-align: center; border-right: 1px solid ${mon.rgb};">${mon.pGrade}</td>
 				<td style="text-align: center; height: 45px;">
-					<div id ="type" style="margin:2px; background-color: 
+					<div id ="type" style="background-color: 
 			<c:if test="${mon.type_num == 1}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 2}">${mon.rgb};</c:if>
 			<c:if test="${mon.type_num == 3}">${mon.rgb};</c:if>
@@ -597,7 +598,7 @@ function send() {
 					${mon.type_name}
 			</div>
 			<c:if test="${mon.subType_num != null}">
-			<div id= "type" style=" margin:2px; background-color: 
+			<div id= "type" style="background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 2}">${mon.subRgb};</c:if>
 			<c:if test="${mon.subType_num == 3}">${mon.subRgb};</c:if>

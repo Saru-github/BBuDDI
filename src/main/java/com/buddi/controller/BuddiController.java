@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.buddi.dao.BuddiDAO;
 import com.buddi.svc.BuddiService;
 import com.buddi.vo.BuddiBoardVO;
 import com.buddi.vo.BuddiMonVO;

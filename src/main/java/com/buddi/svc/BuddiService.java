@@ -93,9 +93,14 @@ public class BuddiService {
 	public List<BuddiMonVO> getGachaResult(int count, String uid) {
 		List<BuddiMonVO> list2 = new ArrayList<>();
 		Random rd = new Random();
+		
 		for (int i = 0; i < count; i++) {
 			BuddiMonVO vo = new BuddiMonVO();
 			int avgNum = rd.nextInt(1000)+1;
+			
+			List<BuddiMonVO> list1 = dao.getTodayMon();
+			vo = list1.get(0);
+			int toNum = vo.getdNum();
 			
 			
 			int dNum = 0;
@@ -110,28 +115,33 @@ public class BuddiService {
 					106,107,108,109,110,111,112,114,115,117,118,119,120,122,123,124,125,
 					126,127,128,131,137,138,139,140,141};
 			
-				if (1 < avgNum && avgNum <= 50) {
+				if (1 <= avgNum && avgNum <= 50) {
 					dNum =sssr[rd.nextInt(8)];
 					
-				} else if(50 < avgNum && avgNum <= 150) {
+				} else if(50 < avgNum && avgNum <= 100) {
+					dNum =toNum;
+				} else if(100 < avgNum && avgNum <= 200) {
 					dNum =ssr[rd.nextInt(14)];
-				} else if (150 < avgNum && avgNum <= 300) {
+				} else if (200 < avgNum && avgNum <= 400) {
 					dNum =sr[rd.nextInt(25)];
 				} else {
 					dNum =r[rd.nextInt(104)];
 				}
 				
 				if(i == 10) {
-					if(1 < avgNum && avgNum <= 50) {
+					if(1 <= avgNum && avgNum <= 100) {
 						dNum =sssr[rd.nextInt(8)];
-					} else if (50 < avgNum && avgNum <= 350) {
+						
+					} else if(100 < avgNum && avgNum <= 200) {
+							dNum =toNum;
+						
+					} else if (200 < avgNum && avgNum <= 400) {
 						dNum =ssr[rd.nextInt(14)];
 					} else {
 						dNum =sr[rd.nextInt(25)];
 					}
 					
 				}
-			
 			List<Map<String, Object>> list = dao.getMonByNum(dNum);
 			Map<String, Object> map = list.get(0);
 
