@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.buddi.vo.BuddiBoardVO;
+import com.buddi.vo.BuddiEaVO;
 import com.buddi.vo.BuddiMonVO;
 import com.buddi.vo.BuddiUserVO;
 
@@ -68,6 +69,7 @@ public interface BuddiMapper {
 	
 	List<BuddiUserVO> getRanking ();
 	
+	List<BuddiEaVO> getEa (String uid);
 //	List<Map<String, Object>> getPaging (Map<String, Object> map);
 	
 	

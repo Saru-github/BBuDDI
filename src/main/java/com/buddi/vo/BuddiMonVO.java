@@ -8,6 +8,7 @@ public class BuddiMonVO {
 	private String pName;
 	private String pGrade;
 	public static int toMon;
+	public int pType;
 	public String rgb;
 	public int type_num;
 	public String type_name;
@@ -33,7 +34,7 @@ public class BuddiMonVO {
 
 	@Override
 	public String toString() {
-		return String.format("%d %s %s %s %d %s %d %s %s %d %d", dNum, pName, pGrade, rgb, type_name, subType_num ,subType_name, subRgb, po_ea, totalCnt );
+		return String.format("%d %s %s %d %s %d %s %d %s %s %d %d", dNum, pName, pGrade, pType, rgb, type_name, subType_num ,subType_name, subRgb, po_ea, totalCnt );
 	}
 
 	public int getdNum() {
@@ -59,6 +60,15 @@ public class BuddiMonVO {
 
 	public void setpGrade(String pGrade) {
 		this.pGrade = pGrade;
+	}
+	
+
+	public int getpType() {
+		return pType;
+	}
+
+	public void setpType(int pType) {
+		this.pType = pType;
 	}
 
 	public String getRgb() {

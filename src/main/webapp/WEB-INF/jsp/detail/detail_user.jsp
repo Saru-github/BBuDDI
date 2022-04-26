@@ -29,7 +29,7 @@ padding:5px;
 
 
 #detail {
-margin-top:200px;
+margin-top:150px;
 margin-left:10%;
 width: 30%;
 height: 800px;
@@ -98,10 +98,10 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 				<div id ="usercon">
 				<div id= "profile" style="padding-right:30px;">
 				
-				<img src="../upload/${user.uid}.jpg" width="300" height="300" margin>
+				<img src="../upload/${user.uid}.jpg" width="300" height="300" >
 				</div>
 				
-				<div id = "info"  style="margin-top:50px; padding:30px;">
+				<div id = "info"  style="margin-top:40px; padding:30px;">
 				<div >
 					<label>아이디: </label> ${user.uid}
 				</div>
@@ -119,9 +119,23 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 				</div>
 			</div>
 			<div class="logout">
+			
 				[<a href="/buddi/logout">정보수정</a>] [<a href="/buddi/logout">로그아웃</a>]
+			
+			<br>
+			<br>
 			</div>
+		<div style="float:left; margin-top:30px; font-weight:bold; font-size:20px;"  >
+		<c:forEach var="b" items="${ea}"> 
+		<img src="../upload/t${b.pType}.jpg" width="90" height="100">: 
+		${ b.ea}
+		</c:forEach>
+		</div>
 				</div>
+				
+				
+		
+		
 
 <div id="box">
 <div id="dogam">
@@ -129,14 +143,14 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 </div>
 <c:forEach var="b" items="${pu.list}" >
 <div id="album" style=" padding:20px; ">
-	<div id= "grade"> ${b.pGrade}</div>
+	<div id= "grade"> <img src="../upload/t${b.pType}.jpg" width="40" height="40"></div>
 	<div id= "ea"> 보유: ${b.po_ea}</div>
 	<br>
 	<div id = "poimg" style="margin-top:20px;">
 	<img src="../upload/poketmon/${b.dNum}.gif" width="80" height="100">
 	</div>
 	<br>
-	<div id = "name" style="padding-bottom:20px;">${b.dNum}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${b.pName} 
+	<div id = "name" style="padding-bottom:20px;">${b.pGrade}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${b.dNum}&nbsp;${b.pName} 
 	<br>
 	</div>
 </div>	
@@ -156,6 +170,8 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 
 </div>
 </div>
+
+[<a href="/buddi/main">메인으로</a>]
 
 </body>
 </html>

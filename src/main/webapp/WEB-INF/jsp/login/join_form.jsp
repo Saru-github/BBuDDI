@@ -6,6 +6,10 @@
 <title>회원가입 폼</title>
 <style>
 
+*{
+font-size:25px;
+}
+
 .button{
 	text-align: right;
 }
@@ -111,11 +115,24 @@ function uploadImgPreview() {
 		<div>
 			<label>체육관선택</label>
 			<select name="gym">
-				<option value="s1">전기 체육관</option>
-				<option selected>풀 체육관</option>
-				<option>땅 체육관</option>
-				<option>물 체육관</option>
-				<option>불 체육관</option>
+				<option value="s1" selected>1.불 체육관</option>
+				<option>2.격투 체육관</option>
+				<option>3.에스퍼 체육관</option>
+				<option>4.바위 체육관</option>
+				<option>5.물 체육관</option>
+				<option>6.땅 체육관</option>
+				<option>7.드래곤 체육관</option>
+				<option>8.독 체육관</option>
+				<option>9.노말 체육관</option>
+				<option>10.강철 체육관</option>
+				<option>11.벌레 체육관</option>
+				<option>12.고스트 체육관</option>
+				<option>13.악 체육관</option>
+				<option>14.비행 체육관</option>
+				<option>15.얼음 체육관</option>
+				<option>16.전기 체육관</option>
+				<option>17.페어리 체육관</option>
+				<option>18.풀 체육관</option>
 			</select>
 		</div>
 
@@ -131,9 +148,9 @@ function uploadImgPreview() {
 		</div>
 			<div class="button">
 			<button type = submit>전송</button>
-			<button type = reset>전송</button>
+			<button type = reset>취소</button>
 			</div>
-	
+			[<a href="/buddi/main/">메인으로</a>]
 	
 	<hr />
 

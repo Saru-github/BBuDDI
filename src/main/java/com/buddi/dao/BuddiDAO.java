@@ -1,5 +1,6 @@
 package com.buddi.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.buddi.mapper.BuddiMapper;
 import com.buddi.vo.BuddiBoardVO;
+import com.buddi.vo.BuddiEaVO;
 import com.buddi.vo.BuddiMonVO;
 import com.buddi.vo.BuddiUserVO;
 import com.github.pagehelper.PageHelper;
@@ -151,5 +153,11 @@ public class BuddiDAO
 			buddiMapper.insertPoUser(map);
 		}
 		
+	}
+	
+	public List<BuddiEaVO> getEa(String uid) {
+		
+		return buddiMapper.getEa(uid);
+	
 	}
 }

@@ -124,6 +124,7 @@ public class BuddiController {
 		BuddiPagingVO pu = svc.getOwnMon(uid, pageNum); 
 		model.addAttribute("user", user);
 		model.addAttribute("pu", pu);
+		model.addAttribute("ea", svc.getEa(uid));
 
 		return "/detail/detail_user";
 	}

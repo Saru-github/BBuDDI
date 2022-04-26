@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.buddi.dao.BuddiDAO;
 import com.buddi.vo.BuddiAttachVO;
 import com.buddi.vo.BuddiBoardVO;
+import com.buddi.vo.BuddiEaVO;
 import com.buddi.vo.BuddiMonVO;
 import com.buddi.vo.BuddiPagingVO;
 import com.buddi.vo.BuddiUserVO;
@@ -70,6 +71,10 @@ public class BuddiService {
 
 	public List<Map<String, Object>> detailMon(int dNum) {
 		return dao.getMonByNum(dNum);
+	}
+	
+	public List<BuddiEaVO> getEa(String uid){
+		return dao.getEa(uid);
 	}
 
 	public BuddiMonVO getTodayMon() {

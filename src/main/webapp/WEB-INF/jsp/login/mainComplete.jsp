@@ -466,9 +466,8 @@ function send() {
 		
 
 		<div class="c">
-         <h1 id="logo">회원정보</h1>
 
-         <div id=detail>
+         <div id=detail style="margin-top: 20px;">
             <div>
                <label>유저번호: </label> ${user.uNum}
             </div>
@@ -477,6 +476,9 @@ function send() {
             </div>
             <div>
                <label>유저등급: </label> ${user.uGrade}
+            </div>
+            <div align="left">
+               <label style="float:left; margin-top:20px; margin-left:70px;">소속체육관: </label> <img src="../upload/t1.jpg" width="60" height="60" style="margin-left:10px;">
             </div>
             <div id="ball">
                <img src="../upload/ball.jpg" width="50" height="50" style=" margin-left:100px; float:left;">
