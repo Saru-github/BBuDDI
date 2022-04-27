@@ -116,7 +116,7 @@ h2 {
 	bottom: 0px;
 	cursor: pointer;
 	width: 100%;
-	line-height: 300px;
+	line-height: 350px;
 	display: block;
 	text-align: center;
     color:#fff;
@@ -188,12 +188,9 @@ jQuery(document).ready(function($){
     <div class="card">
       <div class="front">
         <span class="flipButton">뽑기</span>
-        <section>
-        </section>        
       </div>
       <div class="back">
         <span class="flipButton"></span>
-        <section>
         	<div id ="gachanum" style = "text-align: right; magin-right:20px;">
         	
         	<c:if test="${b.gachaNum!=11}">${b.gachaNum}번째 뽑기</c:if>
@@ -227,6 +224,7 @@ jQuery(document).ready(function($){
 							
 							<img src="../upload/poketmon/${b.dNum}.gif" width="100" height="120">
 			</div>
+			<br> 
 			<br> 
 			
 			
@@ -332,8 +330,7 @@ jQuery(document).ready(function($){
   <a href = "/buddi/gogacha?strCount=1" >1회뽑기</a><br>
   <a href = "/buddi/mainc" >메인으로</a>
   </div>
-        </section> 
-  
-
+</div>
+</section>
 </body>
 </html>

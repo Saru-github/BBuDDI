@@ -16,9 +16,11 @@
 }
 html, body{
 	height:100%;
+	
 }
  
 .container {
+	
 	whidth: 100%;
 	height: 100%;
 	margin: 0 auto;

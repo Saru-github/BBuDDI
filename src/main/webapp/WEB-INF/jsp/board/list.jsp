@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +62,8 @@ a:hover{
 					<td>${b.bdate}</td>
 					<td>
 					<c:forEach var="a" items="${b.attach}">
-     	  		 	 ${a.filename} (${a.filesize}kb)
+     	  		 	 ${a.filename} <fmt:formatNumber var="kilo" value="${a.filesize/1024}" maxFractionDigits="0" />
+					(${kilo}kb)
       				</c:forEach>
 					</td>
 				</tr>

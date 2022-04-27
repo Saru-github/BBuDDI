@@ -132,7 +132,7 @@ public class BuddiController {
 
 	@GetMapping("/join")
 	public String join() {
-		return "/login/join_form";
+		return "/login/join";
 	}
 
 	@GetMapping("/gacha")
