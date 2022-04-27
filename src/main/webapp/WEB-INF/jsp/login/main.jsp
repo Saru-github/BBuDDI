@@ -439,7 +439,6 @@ function send() {
 			<div class="allbbs">
 				<h1>게시판</h1>
 				<br>
-				<br>
 				
 		<table style="width:100%;">
 			<tr>

@@ -13,7 +13,7 @@
 }
 
 #type{
-	margin:1px;
+	margin:3px;
 	border-radius:5px;
 	width:55px;
 	text-align:center;
@@ -53,8 +53,8 @@ nav {
 
 <body>
 	<div class="a">
-		<h2 style="margin-top:20px;">오늘의 포켓몬은 뭘까용?</h2>
-			<h3 style="margin-top:10px; margin-bottom:30px;">No. ${mon.dNum}</h3>
+		<h2>오늘의 포켓몬은 뭘까용?</h2>
+			<h3 style="margin-top:5px; margin-bottom:30px;">No. ${mon.dNum}</h3>
 			<div id="mon" style="margin-bottom:30px;">
 				<img src="../upload/poketmon/${mon.dNum}.gif" width="100px" height="150px">
 			</div>
@@ -107,6 +107,7 @@ nav {
 			">
 					${mon.type_name}
 			</div>
+			
 			<c:if test="${mon.subType_num != null}"> 
 			<div id= "type" style="background-color: 
 			<c:if test="${mon.subType_num == 1}">${mon.subRgb};</c:if>
@@ -138,10 +139,10 @@ nav {
 		</table>
 	</div>
 	
-	<br>
-	<br>
-	<br>
-	<br>
+	<h3>오늘의 포켓몬 확률 증가!!<br>
+	<br>1~10회째 : +5%
+	<br>10+1회째 : +10%
+	</h3>
 	
 	<div class = "gacha">
 			<a href = "/buddi/gogacha?strCount=11" >11회뽑기</a>
@@ -150,11 +151,8 @@ nav {
 	
 	
 	
-	
-	
-	
 	</div>
-	<div class = "gachaimg" style="margin-top:200px;" >
+	<div class = "gachaimg" style="margin-top:100px;" >
 		<img style="margin-top:100px;" src="../upload/gacha.png" >
 	</div>
 </body>

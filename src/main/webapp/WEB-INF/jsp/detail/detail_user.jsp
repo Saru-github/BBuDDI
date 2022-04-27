@@ -150,7 +150,7 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 	<img src="../upload/poketmon/${b.dNum}.gif" width="80" height="100">
 	</div>
 	<br>
-	<div id = "name" style="padding-bottom:20px;">${b.pGrade}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${b.dNum}&nbsp;${b.pName} 
+	<div id = "name" style="padding-bottom:20px;">${b.pGrade}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${b.dNum}&nbsp;&nbsp;${b.pName} 
 	<br>
 	</div>
 </div>	
@@ -171,7 +171,7 @@ width:fit-content; margin-left: 40%; margin-top:20px;
 </div>
 </div>
 
-[<a href="/buddi/main">메인으로</a>]
+[<a href="/buddi/mainc">메인으로</a>]
 
 </body>
 </html>
