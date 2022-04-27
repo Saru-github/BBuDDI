@@ -443,7 +443,7 @@ function send() {
 					<br>
 					</div>
 				</td>
-			</tr>
+			</tr>   
 			<tr id="bbs">
 				<th>글번호</th>
 				<th>글제목</th>
