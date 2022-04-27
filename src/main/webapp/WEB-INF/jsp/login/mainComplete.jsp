@@ -429,7 +429,6 @@ function send() {
 			</div>
 			<br>
 			
-		
 		<div class="b">
 			<div class="allbbs">
 				<h1>게시판</h1>  
