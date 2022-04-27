@@ -97,7 +97,7 @@ body {
 						</div>
 						<div class="col-md-4 mb-3" style="font-size:20px;">
 							<label for="code">성별</label> <Br>
-							<input style="margin-left:30px;" type="radio" name="gender" value="m" checked>남 <input type="radio" name="gender" value="f">여
+							<input style="margin-left:30px;" type="radio" name="gender" value="m" checked>남&nbsp;&nbsp; <input type="radio" name="gender" value="f">여
 						</div>
 					</div>
 					<hr class="mb-4">

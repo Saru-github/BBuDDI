@@ -439,6 +439,7 @@ function send() {
 			<div class="allbbs">
 				<h1>게시판</h1>
 				<br>
+				<br>
 				
 		<table style="width:100%;">
 			<tr>
@@ -632,10 +633,16 @@ KaKao talk: <a href="https://open.kakao.com/o/sHmgwxbe" rel="nofollow"><img styl
 	</div>
 	
 	
-		<div class="footer">
-		<div id="footcnt"><div class="TCIIWe" style="height:106px" id="fbarcnt"><div class="f6F9Be TrMVnc mSAqxd" id="fbar"><div class="fbar b2hzT"><div class="b0KoTc B4GxFc"><span class="Q8LRLc">대한민국</span><div class="fbar smiUbb" id="swml" style="visibility: visible;"><div jscontroller="qcH9Lc" id="tsuid29" jsdata="z6bOeb;_;Ce1rVI" jsaction="oEnJg:CEnhyd;gJk92:b6DXXd;gfszqc:BGFS9"><div class="rwA8ec HDOrGf GNm3Qb" style="white-space:normal"><a jsname="gXWYVe" href="#" style="white-space:normal" data-biw="1920" jsaction="click:HTIlC" role="button" tabindex="0" data-ved="2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQuZ0HegQIARBR"><div class="GNm3Qb"><span class="EYqSq unknown_loc"></span><span class="dfB0uf">중구 서울특별시</span></div><div class="GNm3Qb"><span id="VdZal">&nbsp;-&nbsp;</span><span class="KwU3F"><span>IP 주소 기반</span></span></div></a><g-dialog jsname="BDbGbf" jscontroller="VEbNoe" data-id="_k_9lYqO9AtOv2roPkpaqkAY31" jsaction="jxvro:Imgh9b" jsdata="gctHtc;_;Ce1rVM" jsshadow=""><div jsname="XKSfm" id="_k_9lYqO9AtOv2roPkpaqkAY31" jsaction="dBhwS:TvD9Pc;mLt3mc"><div jsname="bF1uUb" class="t7xA6 Xz5tfb"></div><div class="bErdLd llJxV hFCnyd wwYr3"><div class="ls8Qne" aria-hidden="true" role="button" tabindex="0" jsaction="focus:sT2f3e"></div><span jsslot=""><div class="NJfJb TUOsUe mr5vfb Sr5CLc OosGzb" aria-labelledby="lQ3q8c" role="dialog"><div jsname="C8RmQc" id="C8RmQc" data-jiis="up" data-async-type="lbsc" class="yp"></div></div></span><div class="ls8Qne" aria-hidden="true" role="button" tabindex="0" jsaction="focus:tuePCd"></div></div></div></g-dialog></div><span id="RYW0de">&nbsp;-&nbsp;</span><update-location class="xSQxL HDOrGf" jscontroller="XVaCB" data-eom-state="1" jsaction="click: Q1u0zb; sFrcje: SBZ73c;" role="button" tabindex="0" data-ved="2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQpLkCegQIARBT">위치 업데이트<g-snackbar jsname="wzWFvc" id="tsuid32" jscontroller="OZLguc" style="display:none" data-dismiss="" jsshadow="" jsaction="rcuQ6b:npT2md" __is_owner="true"><div jsname="Ng57nc" class="FEXCIb" data-ved="2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQ4G96BAgBEFQ" jsowner="tsuid32"><div class="EA3l1b"><div class="Xb004" jsslot=""><span class="awHmMb wHYlTd yUTMj">위치를 업데이트할 수 없음</span><g-snackbar-action class="BDp8nf zJUuqf AB4Wff aepCxe" jsname="KTB9Af" jscontroller="xRxDld" jsaction="GtUzrb" data-ved="2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQhbkIegQIARBW"><g-flat-button class="U8shWc r2fjmd hObAcc gTewb VDgVie hpZDWd fSXIc" style="color:#4285f4" role="button" tabindex="0"><span>자세히 알아보기</span></g-flat-button></g-snackbar-action></div></div></div></g-snackbar><g-snackbar jsname="M8d6me" id="tsuid34" jscontroller="OZLguc" style="display:none" jsshadow="" jsaction="rcuQ6b:npT2md" __is_owner="true"><div jsname="Ng57nc" class="FEXCIb" data-ved="2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQ4G96BAgBEFg" jsowner="tsuid34"><div class="EA3l1b"><div class="Xb004" jsslot=""><span class="awHmMb wHYlTd yUTMj">위치 업데이트 중...</span></div></div></div></g-snackbar></update-location></div></div></div></div><div class="fbar"><span class="B4GxFc"><span id="fsl"><a class="Fx4vi wHYlTd ZYHQ7e" href="https://support.google.com/websearch/?p=ws_results_help&amp;hl=ko&amp;fg=1" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://support.google.com/websearch/%3Fp%3Dws_results_help%26hl%3Dko%26fg%3D1&amp;ved=2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQ8KwCegQIARBa">도움말</a><a href="#" class="Fx4vi" data-bucket="websearch" data-psd-ssc="0" id="dk2qOd" target="_blank" jsaction="trigger.YcfJ" data-ved="2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQLnoECAEQWw">의견 보내기</a><a class="Fx4vi wHYlTd ZYHQ7e" href="https://policies.google.com/privacy?hl=ko&amp;fg=1" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://policies.google.com/privacy%3Fhl%3Dko%26fg%3D1&amp;ved=2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQ8awCegQIARBc">개인정보처리방침</a><a class="Fx4vi wHYlTd ZYHQ7e" href="https://policies.google.com/terms?hl=ko&amp;fg=1" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://policies.google.com/terms%3Fhl%3Dko%26fg%3D1&amp;ved=2ahUKEwjj0oX4ja73AhXTl1YBHRKLCmIQ8qwCegQIARBd">약관</a></span></span></div></div></div></div>
+		<div class="footer" style="text-align:center;">
+		
+		 <p style="margin-top:45px;">Copyright © 2022 saru.co.,Ltd. All rights reserved.</p>
+    <address>Contact me for more information.
+    call No. 010-7262-7548, <a href="https://github.com/Saru-github">https://github.com/Saru-github</a></address>
+		
 		
 		</div>
 	</div>
+	
+	
 </body>
 </html>

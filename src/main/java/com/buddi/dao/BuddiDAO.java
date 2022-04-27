@@ -126,14 +126,13 @@ public class BuddiDAO
 	public void minusBall(Map<String, Object> map) {
 		buddiMapper.minusBall(map);
 	}
-	
+	//@Scheduled(cron = "0/1 * * * * * ") 
 	@Scheduled(cron = "0 0 0/1 * * * ") 
 	public void plusBall() {
 		buddiMapper.plusBall();
 	}
 	
 	@Scheduled(cron = "0 0 12 * * * ") 
-	//@Scheduled(cron = "0/1 * * * * * ") 
 	public void TodayMon() {
 		int[] r = {10,11,13,14,15,19,20,21,22,23,24,27,28,29,30,31,32,33,34,
 				36,39,40,41,42,43,44,45,46,47,48,49,50,51,53,55,56,57,58,59,

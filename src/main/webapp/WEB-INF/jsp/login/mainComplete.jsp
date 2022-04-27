@@ -246,7 +246,6 @@ input{
 .footer {
 	grid-area: footer;
 	border: 1px solid black;
-	font-size: xx-large;
 	text-align: center;
 	width: 100%;
 }
@@ -636,7 +635,14 @@ function send() {
 	
 	
 	
-		<div class="footer">footer</div>
+		<div class="footer" style="text-align:center;">
+		
+		 <p style="margin-top:45px; ">Copyright © 2022 saru.co.,Ltd. All rights reserved.</p>
+    <address>Contact me for more information.
+    call No. 010-7262-7548, <a href="https://github.com/Saru-github">https://github.com/Saru-github</a></address>
+		
+		
+		</div>
 	</div>
 </body>
 </html>

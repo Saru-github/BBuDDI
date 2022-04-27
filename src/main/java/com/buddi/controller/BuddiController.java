@@ -35,7 +35,7 @@ import com.buddi.vo.BuddiPagingVO;
 import com.buddi.vo.BuddiUserVO;
 
 @Controller
-@SessionAttributes({ "uid", "mon" }) /* uid 라는 파라미터변수나 ModelAttribute 속성은 세션에 저장 */
+@SessionAttributes({ "uid", "mon" }) 
 @RequestMapping("/buddi")
 public class BuddiController {
 
@@ -268,11 +268,42 @@ public class BuddiController {
 
 		return absolutePath;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@GetMapping("/test")
 	public String test() {
 		return "login/NewFile";
 	}
 
+	
+	
+	
+	
+	
 	/*
 	 * @GetMapping("/edit") public String edit(@RequestParam String userid, Model
 	 * model) { User user = svc.detail(userid); model.addAttribute("user", user);
