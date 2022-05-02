@@ -616,7 +616,7 @@ function send() {
 			[<a id="gacha" href="/buddi/gacha">자세히보기</a>]<br>
 			</div>
 		</div>
-	
+	e
 	
 	
 	<div class="g">
