@@ -152,7 +152,7 @@ public class BuddiDAO
 		buddiMapper.reTodayMon();
 		buddiMapper.todayMon(dNum);
 	}
-	 
+	   
 	public List<BuddiMonVO> getTodayMon() {
 		return buddiMapper.getTodayMon();
 	}
