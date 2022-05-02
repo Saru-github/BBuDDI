@@ -156,7 +156,7 @@ public class BuddiDAO
 	public List<BuddiMonVO> getTodayMon() {
 		return buddiMapper.getTodayMon();
 	}
-
+ 
 	public void addPoUser(int dNum,String uid) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("dNum", dNum);
