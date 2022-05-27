@@ -1,5 +1,5 @@
 # BBuDDI
-Middle project - BbuddiBbuddi Seal
+Middle project (personal project) - BbuddiBbuddi Seal
 
 youtube : https://www.youtube.com/watch?v=sBk9YJssWe4 
 
