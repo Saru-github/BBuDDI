@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <title>게시판 목록 보기</title>
 <style>
+	
 #wrap {
     width: 1000px;
 	margin:auto;
